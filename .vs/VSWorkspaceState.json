@@ -3,9 +3,11 @@
     "",
     "\\src",
     "\\src\\app",
+    "\\src\\app\\Acesso",
     "\\src\\app\\navegacao",
-    "\\src\\app\\navegacao\\cabecalho"
+    "\\src\\app\\navegacao\\error404",
+    "\\src\\environments"
   ],
-  "SelectedNode": "\\src\\environments",
+  "SelectedNode": "\\src\\app\\app.module.ts",
   "PreviewInSolutionExplorer": false
 }
