@@ -5,11 +5,13 @@ import { RodapeComponent } from './rodape/rodape.component';
 import { CabecalhoComponent } from './cabecalho/cabecalho.component';
 import { CarregamentoComponent } from './carregamento/carregamento.component';
 import { Error404Component } from './error404/error404.component';
+import { CabecalhoLoginComponent } from './cabecalho-login/cabecalho-login.component';
+import { NavegacaoService } from './services/navegacao.service';
 
 
 
 @NgModule({
-  declarations: [HomeComponent, RodapeComponent, CabecalhoComponent, CarregamentoComponent, Error404Component],
+  declarations: [HomeComponent, RodapeComponent, CabecalhoComponent, CarregamentoComponent, Error404Component, CabecalhoLoginComponent],
   imports: [
     CommonModule
   ],
@@ -18,6 +20,10 @@ import { Error404Component } from './error404/error404.component';
     RodapeComponent,
     CabecalhoComponent,
     CarregamentoComponent,
-    Error404Component]
+    Error404Component],
+
+  providers:[
+    NavegacaoService
+  ]
 })
 export class NavegacaoModule { }

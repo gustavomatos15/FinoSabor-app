@@ -1,0 +1,61 @@
+/*nao vai funcionar*/
+.image{
+	background-image: url("https://images.wallpaperscraft.com/image/leaf_green_minimalism_152795_1600x900.jpg");
+	background-size: cover;
+}
+
+h1{
+	text-align: center;
+	margin-bottom: 30px;
+}
+
+.box{
+    display:  block;
+	position: static;
+	width: 360px;
+	height: 580px;
+	background: rgba(255, 255, 255, 0.85);
+    
+	padding: 80px 40px;
+	border-radius: 10px;
+
+    box-sizing: border-box;
+	font-family: 'Open Sans';
+	text-decoration: none;
+}
+
+.txt{
+	margin-bottom: 30px;
+}
+
+.txt input{
+	width: 100%;
+	height: 40px;
+	border: 1px solid #ccc;	
+	background: none;
+}
+
+#input{
+	width: 100%;
+	height: 40px;
+	border: none;
+	border-bottom: 5px solid #d35400;
+	background: #e67e22;
+	color: #fff;
+	margin-bottom: 100px;
+	font-size: 15px;
+	/*Fonte nao esta funconando*/
+	font-family: 'Open Sans';
+	text-decoration: none;
+}
+	
+	
+.link{
+	text-align: center;
+	font-size: 15px;
+}
+
+.link a{
+	color: #f39c12;
+	font-size: 15px;
+}

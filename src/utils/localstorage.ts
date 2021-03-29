@@ -1,29 +1,29 @@
 export class LocalStorageUtils {
 
     public obterUsuario() {
-        return JSON.parse(localStorage.getItem('SistemaERP.user'));
+        return JSON.parse(localStorage.getItem('Sistema.user'));
     }
 
     public salvarDadosLocaisUsuario(response: any) {
         this.salvarTokenUsuario(response.accessToken);
-        this.salvarUsuario(response.usuarioToken);
+        this.salvarUsuario(response);
     }
 
     public limparDadosLocaisUsuario() {
-        localStorage.removeItem('SistemaERP.token');
-        localStorage.removeItem('SistemaERP.user');
+        localStorage.removeItem('Sistema.token');
+        localStorage.removeItem('Sistema.user');
     }
 
     public obterTokenUsuario(): string {
-        return localStorage.getItem('SistemaERP.token');
+        return localStorage.getItem('Sistema.token');
     }
 
     public salvarTokenUsuario(token: string) {
-        localStorage.setItem('SistemaERP.token', token);
+        localStorage.setItem('Sistema.token', token);
     }
 
     public salvarUsuario(user: string) {
-        localStorage.setItem('SistemaERP.user', JSON.stringify(user));
+        localStorage.setItem('Sistema.user', JSON.stringify(user));
     }
 
 }

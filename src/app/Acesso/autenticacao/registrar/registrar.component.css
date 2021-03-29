@@ -1,16 +1,6 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-	font-family: 'Open Sans';
-	text-decoration: none;
-}
 
-html, body{
-	height: 100%;
-}
-
-body{
+/*nao vai funcionar*/
+.image{
 	background-image: url("https://images.wallpaperscraft.com/image/leaf_green_minimalism_152795_1600x900.jpg");
 	background-size: cover;
 }
@@ -30,6 +20,10 @@ h1{
 	background: rgba(255, 255, 255, 0.85);
 	padding: 80px 40px;
 	border-radius: 10px;
+
+    box-sizing: border-box;
+	font-family: 'Open Sans';
+	text-decoration: none;
 }
 
 .txt{
@@ -43,7 +37,7 @@ h1{
 	background: none;
 }
 
-input[type="submit"]{
+#input{
 	width: 100%;
 	height: 40px;
 	border: none;
@@ -52,6 +46,9 @@ input[type="submit"]{
 	color: #fff;
 	margin-bottom: 100px;
 	font-size: 15px;
+	/*Fonte nao esta funconando*/
+	font-family: 'Open Sans';
+	text-decoration: none;
 }
 	
 	

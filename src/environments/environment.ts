@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl:'https://sistemaerp.azurewebsites.net/api/'
+  apiUrl:'https://sistema-erp.azurewebsites.net/api/'
 };
 
 /*

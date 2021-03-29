@@ -4,12 +4,19 @@ import { Error404Component } from './navegacao/error404/error404.component';
 import { HomeComponent } from './navegacao/home/home.component';
 
 const routes: Routes = [
+
+  { path: '', component: HomeComponent },
+
   { path: '', 
   loadChildren:()=> import ('./Acesso/autenticacao/autenticacao.module')    
   .then(a=> a.AutenticacaoModule)
 },
-  { path: '', component: HomeComponent },
-  { path: '**', component: Error404Component },
+
+  
+  { path: '**', component: Error404Component }
+  
+ 
+  
  
 ];
 
