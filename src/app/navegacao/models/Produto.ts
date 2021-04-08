@@ -4,5 +4,5 @@ export interface Produto {
     valor: number;
     descricao: string;
     id: string;
-    imagem: string;
+    imagem_principal: string;
 }
