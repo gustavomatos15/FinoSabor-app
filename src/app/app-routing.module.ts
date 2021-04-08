@@ -7,17 +7,30 @@ const routes: Routes = [
 
   { path: '', component: HomeComponent },
 
-  { path: '', 
-  loadChildren:()=> import ('./Acesso/autenticacao/autenticacao.module')    
-  .then(a=> a.AutenticacaoModule)
-},
+  {
+    path: '',
+    loadChildren: () => import('./Acesso/autenticacao/autenticacao.module')
+      .then(a => a.AutenticacaoModule)
+  },
 
-  
+  {
+    path: 'produtos',
+    loadChildren: () => import('./produto/produto.module')
+      .then(a => a.ProdutoModule)
+  },
+
+  {
+    path: 'pedidos',
+    loadChildren: () => import('./pedido/pedido.module')
+      .then(a => a.PedidoModule)
+  },
+
+
   { path: '**', component: Error404Component }
-  
- 
-  
- 
+
+
+
+
 ];
 
 @NgModule({

@@ -11,16 +11,26 @@ import { NavegacaoService } from './services/navegacao.service';
 
 
 @NgModule({
-  declarations: [HomeComponent, RodapeComponent, CabecalhoComponent, CarregamentoComponent, Error404Component, CabecalhoLoginComponent],
+  declarations: [
+    HomeComponent,
+    RodapeComponent,
+    CabecalhoComponent,
+    CarregamentoComponent,
+    Error404Component,
+    CabecalhoLoginComponent
+  ],
   imports: [
     CommonModule
+    
   ],
   exports: [
     HomeComponent,
     RodapeComponent,
     CabecalhoComponent,
     CarregamentoComponent,
-    Error404Component],
+    Error404Component,
+    CabecalhoLoginComponent
+  ],
 
   providers:[
     NavegacaoService
