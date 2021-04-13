@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Produto } from 'src/app/produto/models/produto';
 import { environment } from 'src/environments/environment';
+import { Produto } from '../../produto/models/produto';
 import { NavegacaoService } from '../services/navegacao.service';
 
 @Component({
