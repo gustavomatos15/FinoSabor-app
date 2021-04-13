@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { switchMap, takeUntil } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
-import { Produto } from '../models/produto';
+import { Produto } from '../../navegacao/models/Produto';
 import { ProdutoService } from '../services/produto.service';
 
 @Component({

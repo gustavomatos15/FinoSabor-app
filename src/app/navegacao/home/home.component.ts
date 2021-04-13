@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Produto } from 'src/app/produto/models/produto';
+import { Produto } from 'src/app/navegacao/models/Produto';
 import { environment } from 'src/environments/environment';
 import { NavegacaoService } from '../services/navegacao.service';
 

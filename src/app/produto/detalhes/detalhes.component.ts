@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { environment } from 'src/environments/environment';
-import { Produto } from '../models/produto';
+import { Produto } from '../../navegacao/models/Produto';
 
 @Component({
   selector: 'app-detalhes',

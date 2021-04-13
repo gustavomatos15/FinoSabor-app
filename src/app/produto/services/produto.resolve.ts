@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Resolve, ActivatedRouteSnapshot } from '@angular/router';
 import { ProdutoService } from '../../produto/services/produto.service';
-import { Produto } from '../models/produto';
+import { Produto } from '../../navegacao/models/Produto';
 
 @Injectable({
     providedIn: 'root'
