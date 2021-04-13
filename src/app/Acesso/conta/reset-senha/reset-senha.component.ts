@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-reset-senha',
@@ -7,9 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ResetSenhaComponent implements OnInit {
 
-  constructor() { }
+  constructor(private activatedRouteoute: ActivatedRoute) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+
+    let userId = '';
+    userId= this.activatedRouteoute.snapshot.queryParams['userId'];
+
+    const token = this.activatedRouteoute.snapshot.queryParams['token'];
+
+      console.log(userId, token);
+
+      this.activatedRouteoute.queryParamMap.subscribe(result =>
+        {
+            console.log(`userId: ${result.get('userId')}`);
+            console.log(`token: ${result.get('token')}`);        
+        });     
   }
 
 }

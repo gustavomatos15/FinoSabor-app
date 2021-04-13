@@ -6,7 +6,7 @@ import { CabecalhoComponent } from './cabecalho/cabecalho.component';
 import { CarregamentoComponent } from './carregamento/carregamento.component';
 import { Error404Component } from './error404/error404.component';
 import { CabecalhoLoginComponent } from './cabecalho-login/cabecalho-login.component';
-import { NavegacaoService } from './services/navegacao.service';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -20,7 +20,8 @@ import { NavegacaoService } from './services/navegacao.service';
     CabecalhoLoginComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
     
   ],
   exports: [
@@ -30,10 +31,6 @@ import { NavegacaoService } from './services/navegacao.service';
     CarregamentoComponent,
     Error404Component,
     CabecalhoLoginComponent
-  ],
-
-  providers:[
-    NavegacaoService
   ]
 })
 export class NavegacaoModule { }

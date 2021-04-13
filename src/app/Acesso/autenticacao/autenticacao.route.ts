@@ -9,8 +9,8 @@ const authRouterConfig: Routes = [
   {
       path:'', component:AutenticacaoAppComponent,
       children:[
-          {path:'registrar', component:RegistrarComponent},
-          {path:'login', component:LoginComponent},
+          { path:'registrar', component:RegistrarComponent },
+          { path:'login', component:LoginComponent },
 
       ]
       

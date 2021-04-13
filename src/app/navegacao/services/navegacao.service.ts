@@ -3,19 +3,21 @@ import { HttpClient } from '@angular/common/http';
 
 import { Observable } from 'rxjs';
 import { catchError, map } from "rxjs/operators";
-import { BaseService } from '../../../services/base.service';
-import { Usuario } from 'src/app/Acesso/autenticacao/models/Usuario';
+import { BaseService } from '../../services/base.service';
 import { Categoria } from '../models/Categoria';
-import { Produto } from '../models/Produto';
+import { Produto } from 'src/app/produto/models/produto';
 
-@Injectable()
+@Injectable({
+    providedIn: 'root'
+  })
+  
 export class NavegacaoService extends BaseService {
 
     constructor(private http: HttpClient) { super();}
 
     obterCategorias(): Observable<Categoria[]>{
         let response = this.http
-            .get<Categoria[]>(this.UrlServiceV1 + 'Admin/Categoria', this.ObterHeaderJson())
+            .get<Categoria[]>(this.UrlServiceV1 + 'Categoria', this.ObterHeaderJson())
             .pipe(
                 catchError(this.serviceError));
         
@@ -24,7 +26,7 @@ export class NavegacaoService extends BaseService {
     }
     obterProdutos(): Observable<Produto[]>{
         let response = this.http
-            .get<Produto[]>(this.UrlServiceV1 + '/Produto', this.ObterHeaderJson())
+            .get<Produto[]>(this.UrlServiceV1 + 'Produto', this.ObterHeaderJson())
             .pipe(
                 catchError(this.serviceError));
         

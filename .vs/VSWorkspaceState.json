@@ -3,13 +3,10 @@
     "",
     "\\src",
     "\\src\\app",
-    "\\src\\app\\Acesso",
-    "\\src\\app\\Acesso\\autenticacao",
-    "\\src\\app\\Acesso\\autenticacao\\services",
     "\\src\\app\\navegacao",
-    "\\src\\app\\navegacao\\error404",
-    "\\src\\environments"
+    "\\src\\app\\navegacao\\cabecalho",
+    "\\src\\app\\produto"
   ],
-  "SelectedNode": "\\src\\app\\Acesso\\autenticacao\\services\\autenticacao.service.ts",
+  "SelectedNode": "\\src\\app\\app.component.html",
   "PreviewInSolutionExplorer": false
 }

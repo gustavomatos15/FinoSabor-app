@@ -1,0 +1,43 @@
+ <!-- Lista de Produtos
+                    ================================================== -->
+            <!-- Wrap the rest of the page in another container to center all the content. -->
+            <!-- TODO - Chamar Componente -->
+            <div class="container" id="code_prod_complex">
+                <div class="row">
+                    <div class="offset-md-10 col-md-2">
+                        <!-- Alfabetica, Menor Preço, Maior Preço -->
+                        <select id="ordenacao" class="form-control" name="ordenacao">
+                            <option value="A">Alfab&#xE9;tica</option>
+                            <option value="ME">Menor pre&#xE7;o</option>
+                            <option value="MA">Maior pre&#xE7;o</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                  
+                        <div class="col-md-3"
+                          *ngFor= "let produto of produtos">
+                            <figure class="card card-product">
+                              <a [routerLink]="['/produtos/detalhes',produto.slug]">
+                                <div class="img-wrap">
+                                    <img src={{UrlImagem+produto.imagem_principal}} />
+  
+                                </div>
+                                <figcaption class="info-wrap">
+                                    <h4 class="title">{{produto.nome}}</h4>
+                                </figcaption>
+                                <div class="bottom-wrap">
+  
+                                    <a class="btn btn-sm btn-primary float-right" href="#void" >Adicionar ao Carrinho</a>
+  
+                                    <div class="price-wrap h5">
+                                        <span class="price-new">R${{produto.valor}}</span>
+                                    </div> <!-- price-wrap.// -->                               
+                                </div> <!-- bottom-wrap.// -->
+                              </a>
+                            </figure>
+                        </div> <!-- col // -->
+                  
+                </div> <!-- row.// -->    
+            </div>
+  

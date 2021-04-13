@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Produto } from '../models/Produto';
+import { Produto } from 'src/app/produto/models/produto';
+import { environment } from 'src/environments/environment';
 import { NavegacaoService } from '../services/navegacao.service';
 
 @Component({
@@ -10,11 +11,12 @@ import { NavegacaoService } from '../services/navegacao.service';
 export class HomeComponent implements OnInit {
 
   public produtos: Produto[];
+  public UrlImagem: string = environment.imagensurl;
  
-  constructor(private categoriaservice: NavegacaoService) {}
+  constructor(private protudoService: NavegacaoService) {}
 
   ngOnInit(): void {
-    this.categoriaservice.obterProdutos()
+    this.protudoService.obterProdutos()
       .subscribe(
        produtos=> this.produtos = produtos
       )

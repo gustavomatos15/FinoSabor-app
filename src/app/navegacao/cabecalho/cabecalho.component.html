@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
-  <a class="navbar-brand" href="javascript:void(0)" routerLink=""> Fino&Sabor</a>
+  <a class="navbar-brand" href="#void" routerLink=""> Fino&Sabor</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -9,7 +9,7 @@
 
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="index.html"><i class="fas fa-home"></i> Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" routerLink=""><i class="fas fa-home"></i> Home <span class="sr-only">(current)</span></a>
       </li>
       <div class="dropdown">
         <a class="nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
@@ -18,17 +18,10 @@
         </a>
         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li *ngFor= "let categoria of categorias">
-              <a class="dropdown-item" href="#">{{categoria.nome}}</a>
+              <a class="dropdown-item" href="#void" [routerLink]="['/produtos/categoria',categoria.slug]">{{categoria.nome}}</a>
             </li>
           </ul>
-        <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
-          <li *ngfor="let categoria of categorias" class="dropdown-submenu">
-            <a class="dropdown-item" tabindex="-1" href="Produto/Categoria/informtica.html">{{categria.nome}}</a>
-          </li>
-          <li class="dropdown-menu">
-            <a class="dropdown-item" tabindex="-1" href="Produto/Categoria/informtica.html">Pão</a>
-          </li>
-        </ul>
+       
       </div>
       <li class="nav-item ">
         <a class="nav-link" href="Home/Contato.html"><i class="far fa-address-book"></i> Contato </a>
@@ -37,9 +30,12 @@
     <form class="form-inline my-2 my-lg-0" method="get">
       <input class="form-control mr-sm-2" type="search" name="pesquisa" value="" placeholder="palavra" aria-label="Search">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisa</button>
-      <a class="nav-link" href="Cliente/Home/Login.html"><i class="fas fa-user-alt"></i> Entrar</a>
+      
+      <a class="nav-link" href="#void" routerLink="/produtos/carrinho"><i class="fas fa-shopping-cart"></i> Carrinho</a>
+      
+      <app-cabecalho-login></app-cabecalho-login>
+      
 
-      <a class="nav-link" href="CarrinhoCompra.html"><i class="fas fa-shopping-cart"></i> Carrinho</a>
     </form>
   </div>
 </nav>

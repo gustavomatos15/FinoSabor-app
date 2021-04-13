@@ -14,6 +14,12 @@ const routes: Routes = [
   },
 
   {
+    path: '',
+    loadChildren: () => import('./Acesso/conta/conta.module')
+      .then(a => a.ContaModule)
+  },
+
+  {
     path: 'produtos',
     loadChildren: () => import('./produto/produto.module')
       .then(a => a.ProdutoModule)
@@ -25,16 +31,14 @@ const routes: Routes = [
       .then(a => a.PedidoModule)
   },
 
-
   { path: '**', component: Error404Component }
-
-
-
-
+  
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {
+    initialNavigation: 'enabled'
+})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

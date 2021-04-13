@@ -6,7 +6,7 @@
   </ol>
   <div class="carousel-inner">
       <div class="carousel-item active">
-          <img class="first-slide" src="https://img4.goodfon.com/wallpaper/nbig/5/a3/eda-khleb-bagety-bulochki-vypechka.jpg"
+          <img class="first-slide" src="https://images.wallpaperscraft.com/image/height_trees_clouds_sky_dawn_60981_960x544.jpg"
                alt="First slide">
           <div class="container">
               <div class="carousel-caption text-left">
@@ -79,9 +79,9 @@
                       <div class="col-md-3"
                         *ngFor= "let produto of produtos">
                           <figure class="card card-product">
-                            <a href="...">
+                            <a [routerLink]="['/produtos/detalhes',produto.slug]">
                               <div class="img-wrap">
-                                  <img src={{produto.imagem_principal}} />
+                                  <img src={{UrlImagem+produto.imagem_principal}} />
 
                               </div>
                               <figcaption class="info-wrap">
@@ -89,7 +89,7 @@
                               </figcaption>
                               <div class="bottom-wrap">
 
-                                  <a class="btn btn-sm btn-primary float-right" href="CarrinhoCompra.html">Adicionar ao Carrinho</a>
+                                  <a class="btn btn-sm btn-primary float-right" href="#void" >Adicionar ao Carrinho</a>
 
                                   <div class="price-wrap h5">
                                       <span class="price-new">R${{produto.valor}}</span>

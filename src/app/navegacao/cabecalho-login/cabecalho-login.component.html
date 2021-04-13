@@ -1,1 +1,16 @@
-<p>cabecalho-login works!</p>
+<ul [ngSwitch]="usuarioLogado()" class="navbar-nav">
+    <li *ngSwitchCase="false" class="nav-item" style="padding-right: 30px;">
+        <a class="btn btn-primary" routerLink="/login">Entrar</a>
+    </li>
+    <li *ngSwitchCase="false" class="nav-item">
+        <a class="btn btn-success" routerLink="/registrar">Crie sua conta</a>
+    </li>
+
+    <li *ngSwitchCase="true" class="nav-item">
+        <a class="nav-link text-dark" id="saudacaoUsuario" href="#void">{{ nome }}</a>
+    </li>
+    <li *ngSwitchCase="true" class="nav-item">
+        <a class="nav-link text-dark" href="#void" (click)="logout()">
+            Sair <span class="fas fa-sign-out-alt"></span></a>
+    </li>
+</ul>
