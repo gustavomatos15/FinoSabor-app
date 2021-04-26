@@ -22,7 +22,8 @@ import { ContatoComponent } from './contato/contato.component';
     ContatoComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
     
   ],
   exports: [
