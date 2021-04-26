@@ -50,7 +50,7 @@ export class RegistrarComponent extends FormBaseComponent implements OnInit, Aft
 
     ngOnInit(): void {
 
-      let senha = new FormControl('', [Validators.required, CustomValidators.rangeLength([6, 15])s);
+      let senha = new FormControl('', [Validators.required/*, CustomValidators.rangeLength([6, 15])*/]);
       let senhaConfirm = new FormControl('', [Validators.required, /*CustomValidators.rangeLength([6, 15]), CustomValidators.equalTo(senha)*/]);
   
       this.cadastroForm = this.fb.group({
