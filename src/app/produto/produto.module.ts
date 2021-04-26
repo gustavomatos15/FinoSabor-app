@@ -10,7 +10,6 @@ import { ProdutoResolve } from './services/produto.resolve';
 import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
 import { CategoriaComponent } from './categoria/categoria.component';
 
-
 @NgModule({
   declarations: [
     ProdutoAppComponent,

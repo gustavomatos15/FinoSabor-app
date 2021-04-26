@@ -7,6 +7,7 @@ import { CarregamentoComponent } from './carregamento/carregamento.component';
 import { Error404Component } from './error404/error404.component';
 import { CabecalhoLoginComponent } from './cabecalho-login/cabecalho-login.component';
 import { RouterModule } from '@angular/router';
+import { ContatoComponent } from './contato/contato.component';
 
 
 
@@ -17,11 +18,11 @@ import { RouterModule } from '@angular/router';
     CabecalhoComponent,
     CarregamentoComponent,
     Error404Component,
-    CabecalhoLoginComponent
+    CabecalhoLoginComponent,
+    ContatoComponent
   ],
   imports: [
-    CommonModule,
-    RouterModule
+    CommonModule
     
   ],
   exports: [

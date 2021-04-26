@@ -19,7 +19,6 @@ export class AutenticaoService extends BaseService {
 
         return response;
     }
-ng
 
     login(usuario: Usuario): Observable<Usuario> {
         let response = this.http

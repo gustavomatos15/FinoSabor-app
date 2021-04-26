@@ -9,7 +9,7 @@ import { Produto } from '../../navegacao/models/Produto';
 })
 export class DetalhesComponent {
 
-  imagens: string = environment.imagensurl;
+  public UrlImagem: string = environment.imagensurl;
   produto: Produto;
 
   constructor(private route: ActivatedRoute) {

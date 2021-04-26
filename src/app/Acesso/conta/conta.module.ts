@@ -5,6 +5,11 @@ import { EsqueceuSenhaComponent } from './esqueceu-senha/esqueceu-senha.componen
 import { ResetSenhaComponent } from './reset-senha/reset-senha.component';
 import { ContaAppComponent } from './conta.app.component';
 import { ContaRoutingModule } from './conta.route';
+import { ContaService } from './services/conta.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
+import { CustomFormsModule } from 'ngx-custom-validators';
 
 
 
@@ -17,7 +22,15 @@ import { ContaRoutingModule } from './conta.route';
   ],
   imports: [
     CommonModule,
-    ContaRoutingModule
+    RouterModule,
+    ContaRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    CustomFormsModule
+  ],
+  providers: [
+    ContaService
   ]
 })
 export class ContaModule { }

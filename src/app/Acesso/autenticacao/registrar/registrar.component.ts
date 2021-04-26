@@ -31,20 +31,16 @@ export class RegistrarComponent extends FormBaseComponent implements OnInit, Aft
           email: 'Email inválido'
         },
         nome: {
-          required: 'Informe o username',
-          maxLength: 'A senha deve possuir entre 6 e 15 caracteres',
-          minLength:'A senha deve possuir entre 6 e 15 caracteres'
+          required: 'Informe o nome',
+          rangeLength: 'O nome deve possuir entre 2 e 60 caracteres'
         },
         senha: {
           required: 'Informe a senha',
-          maxLength: 'A senha deve possuir entre 6 e 15 caracteres',
-          minLength:'A senha deve possuir entre 6 e 15 caracteres'
-
+          rangeLength: 'A senha deve possuir entre 6 e 15 caracteres'
         },
         senhaConfirm: {
           required: 'Informe a senha novamente',
-          maxLength: 'A senha deve possuir entre 6 e 15 caracteres',
-          minLength:'A senha deve possuir entre 6 e 15 caracteres',
+          rangeLength: 'A senha deve possuir entre 6 e 15 caracteres',
           equalTo: 'As senhas não conferem'
         }
       };
@@ -54,12 +50,12 @@ export class RegistrarComponent extends FormBaseComponent implements OnInit, Aft
 
     ngOnInit(): void {
 
-      let senha = new FormControl('', [Validators.required, Validators.maxLength(10), Validators.minLength(2)]);
-      let senhaConfirm = new FormControl('', [Validators.required, Validators.maxLength(10), Validators.minLength(2)]);
+      let senha = new FormControl('', [Validators.required, CustomValidators.rangeLength([6, 15])s);
+      let senhaConfirm = new FormControl('', [Validators.required, /*CustomValidators.rangeLength([6, 15]), CustomValidators.equalTo(senha)*/]);
   
       this.cadastroForm = this.fb.group({
         email: ['', [Validators.required, Validators.email]],
-        nome: ['', [Validators.required, Validators.maxLength(100), Validators.minLength(2)]],
+        nome: ['', [Validators.required, CustomValidators.rangeLength([2, 60])]],
         senha: senha,
         senhaConfirm: senhaConfirm
       });

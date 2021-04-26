@@ -5,8 +5,11 @@
     "\\src\\app",
     "\\src\\app\\navegacao",
     "\\src\\app\\navegacao\\cabecalho",
-    "\\src\\app\\produto"
+    "\\src\\app\\navegacao\\services",
+    "\\src\\app\\produto",
+    "\\src\\app\\produto\\categoria",
+    "\\src\\app\\produto\\detalhes",
+    "\\src\\app\\produto\\services"
   ],
-  "SelectedNode": "\\src\\app\\app.component.html",
   "PreviewInSolutionExplorer": false
 }

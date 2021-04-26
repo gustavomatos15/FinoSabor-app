@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LoginComponent } from './login/login.component';
-import { RegistrarComponent } from './registrar/registrar.component';
-import { AutenticacaoAppComponent } from './autenticacao.app.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AutenticacaoRoutingModule } from './autenticacao.route';
-import { AutenticaoService } from './services/autenticacao.service';
+import { AutenticacaoAppComponent } from './autenticacao.app.component';
 import { RouterModule } from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { CustomFormsModule } from 'ngx-custom-validators';
+import { CustomFormsModule } from 'ngx-custom-validators'
+import { RegistrarComponent } from './registrar/registrar.component';
 import { NavegacaoModule } from 'src/app/navegacao/navegacao.module';
+import { AutenticaoService } from './services/autenticacao.service';
 
 
 
