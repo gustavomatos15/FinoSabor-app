@@ -3,7 +3,7 @@
 <div class="txt">
     <h1>Recuperar senha:</h1>
     <label for="email">E-mail:</label>
-    <input type="text" name="email" id="email" placeholder= " Digite seu e-mail" formControlName="email" [ngClass]="{'is-invalid': esqueceuSenhaForm.get('email').errors &&  esqueceuSenhaForm.get('email').touched }">
+    <input [(ngModel)]="email" type="text" name="email" id="email" placeholder= " Digite seu e-mail" formControlName="email" [ngClass]="{'is-invalid': esqueceuSenhaForm.get('email').errors &&  esqueceuSenhaForm.get('email').touched }">
     <span class="text-danger" *ngIf="esqueceuSenhaForm.get('email').errors &&  esqueceuSenhaForm.get('email').touched">
         <p [innerHTML]="displayMessage.email"></p>
     </span>

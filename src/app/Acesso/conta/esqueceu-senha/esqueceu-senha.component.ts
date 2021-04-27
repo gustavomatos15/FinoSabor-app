@@ -45,6 +45,7 @@ export class EsqueceuSenhaComponent extends FormBaseComponent implements OnInit,
   }
   public esqueceuSenha(){
     this.errors = [];
+
     this.contaService.esqueceSenha(this.email)
         .subscribe(
           sucesso => { this.processarSucesso(sucesso) },

@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { catchError, map } from "rxjs/operators";
 import { BaseService } from '../../../services/base.service';
 import { Usuario } from '../../autenticacao/models/Usuario';
+import { ResetSenha } from '../models/reset-senha';
 
 @Injectable()
 export class ContaService extends BaseService {
@@ -20,6 +21,18 @@ export class ContaService extends BaseService {
 
         return response;
     }
+
+
+    resetSenha(resetSenha: ResetSenha): Observable<ResetSenha> {
+        let response = this.http
+            .post(this.UrlServiceV1 + 'Conta/ResetSenha', resetSenha, this.ObterHeaderJson())
+            .pipe(
+                map(this.extractData),
+                catchError(this.serviceError));
+
+        return response;
+    }
+
 
 
 }
