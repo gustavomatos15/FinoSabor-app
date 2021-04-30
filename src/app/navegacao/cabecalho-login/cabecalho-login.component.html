@@ -6,11 +6,28 @@
         <a class="btn btn-success" routerLink="/registrar">Crie sua conta</a>
     </li>
 
-    <li *ngSwitchCase="true" class="nav-item">
-        <a class="nav-link text-dark" id="saudacaoUsuario" href="#void">{{ nome }}</a>
-    </li>
-    <li *ngSwitchCase="true" class="nav-item">
-        <a class="nav-link text-dark" href="#void" (click)="logout()">
-            Sair <span class="fas fa-sign-out-alt"></span></a>
-    </li>
+    <div class="dropdown">
+        <a *ngSwitchCase="true" class="nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+           aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-list-ul"></i> {{ nome }}
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+            <li *ngSwitchCase="true" class="nav-item">
+                <a class="nav-link text-dark" routerLink="/pedidos/lista" href="#void">
+                    Meus Pedidos <span class="fas fa-sign-out-alt"></span></a>
+            </li>
+            <li *ngSwitchCase="true" class="nav-item">
+                <a class="nav-link text-dark" routerLink="/gerenciar/perfil" href="#void">
+                    Perfil <span class="fas fa-sign-out-alt"></span></a>
+            </li>
+            <li *ngSwitchCase="true" class="nav-item">
+                <a class="nav-link text-dark" href="#void" (click)="logout()">
+                    Sair <span class="fas fa-sign-out-alt"></span></a>
+            </li>
+          </ul>
+       
+      </div>
+
+
 </ul>

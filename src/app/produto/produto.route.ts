@@ -19,8 +19,7 @@ const produtoRouterConfig: Routes = [
                 }
             },
             { path: 'categoria/:slug', component: CategoriaComponent },
-            { path: 'lista', component: ListaComponent },
-            { path: 'carrinho', component: CarrinhoComponent }
+            { path: 'lista', component: ListaComponent }
         ]
     }
 ];

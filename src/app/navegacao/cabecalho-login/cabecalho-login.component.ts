@@ -21,10 +21,26 @@ export class CabecalhoLoginComponent {
     this.user = this.localStorageUtils.obterUsuario();
 
     if (this.user)
-      this.nome = this.user.nome;
+      this.nome = this.toAbridged(this.user.nome);
 
     return this.token !== null;
   }
+
+  toAbridged(fullName) { 
+    const token = '.';
+    const separator = ' ';
+    const names = this.removePrepositions(fullName).split(separator);
+    const firstName = names[0];
+    let surnames = '';
+    names
+        .filter((name, index) => index)
+        .map(name => surnames += `${separator}${name.charAt()}${token}`);
+    return `${firstName}${surnames.toUpperCase()}`;
+}
+
+removePrepositions(fullName) {
+    return fullName.replace(/\ dos|\ das|\ da|\ dos|\ das|\ de|\ d\'/gi, '');
+}
 
   logout() {
     this.localStorageUtils.limparDadosLocaisUsuario();

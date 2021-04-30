@@ -21,6 +21,12 @@ const routes: Routes = [
   },
 
   {
+    path: 'gerenciar',
+    loadChildren: () => import('./Acesso/gerenciar/gerenciar.module')
+      .then(a => a.GerenciarModule)
+  },
+
+  {
     path: 'produtos',
     loadChildren: () => import('./produto/produto.module')
       .then(a => a.ProdutoModule)

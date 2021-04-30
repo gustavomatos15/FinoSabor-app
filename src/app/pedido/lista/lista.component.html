@@ -1,1 +1,11 @@
-<p>lista works!</p>
+<div class="list-group container">
+    <a *ngFor= "let pedido of pedidos" [routerLink]="['/pedidos/detalhes', pedido.id]" href="#" class="list-group-item list-group-item-action active">
+      <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1">Data: {{pedido.data_pedido}}</h5>
+        <small></small>
+      </div>
+      <p class="mb-1">Status: {{pedido.status == 0 ? "Em andamento" : pedido.status == 1 ? "Processando" : pedido.status == 2 ? "Cancelado" : pedido.status == 3 ? "Enviado" : "Entregue"}}</p>
+      <p class="mb-1">Forma de Pagamento: {{pedido.forma_pagamento == 0 ? "Cartão de credito" : pedido.forma_pagamento == 1 ? "Cartão de debito" : pedido.forma_pagamento == 2 ? "Dinheiro" : "Pix"}}</p>
+            <small>Total: {{pedido.total}}</small>
+    </a>   
+  </div>

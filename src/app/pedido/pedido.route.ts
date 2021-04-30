@@ -5,13 +5,20 @@ import { CarrinhoComponent } from './carrinho/carrinho.component';
 import { ListaComponent } from './lista/lista.component';
 import { PedidoAppComponent } from './pedido.app.component';
 import { RealizarPedidoComponent } from './realizar-pedido/realizar-pedido.component';
+import { PedidoResolve } from './services/pedido.resolve';
 
 const pedidoRouterConfig: Routes = [
   {
     path: '', component: PedidoAppComponent,
     children: [
       { path: 'carrinho', component: CarrinhoComponent },
-      { path: 'detalhes', component: DetalhesComponent },
+      {
+         path: 'detalhes/:id', component: DetalhesComponent,
+         resolve: {
+          produto: PedidoResolve
+        }
+        
+      },
       { path: 'lista', component: ListaComponent },
       { path: 'realizar-pedido', component: RealizarPedidoComponent },
 

@@ -6,6 +6,7 @@ import { ListaComponent } from './lista/lista.component';
 import { RealizarPedidoComponent } from './realizar-pedido/realizar-pedido.component';
 import { PedidoAppComponent } from './pedido.app.component';
 import { PedidoRoutingModule } from './pedido.route';
+import { PedidoService } from './services/pedido.service';
 
 
 
@@ -20,6 +21,9 @@ import { PedidoRoutingModule } from './pedido.route';
   imports: [
     PedidoRoutingModule,
     CommonModule
+  ],
+  providers: [
+    PedidoService
   ]
 })
 export class PedidoModule { }
