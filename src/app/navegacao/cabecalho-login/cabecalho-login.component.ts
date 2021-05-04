@@ -27,15 +27,16 @@ export class CabecalhoLoginComponent {
   }
 
   toAbridged(fullName) { 
+    const lastName= ' ' +fullName.split(' ').slice(-1).join(' ');
     const token = '.';
     const separator = ' ';
-    const names = this.removePrepositions(fullName).split(separator);
+    const names = this.removePrepositions(fullName.replace(lastName, '')).split(separator);
     const firstName = names[0];
     let surnames = '';
     names
         .filter((name, index) => index)
         .map(name => surnames += `${separator}${name.charAt()}${token}`);
-    return `${firstName}${surnames.toUpperCase()}`;
+    return `${firstName}${surnames.toUpperCase()}${lastName}`;
 }
 
 removePrepositions(fullName) {
