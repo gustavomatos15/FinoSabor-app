@@ -1,4 +1,37 @@
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-orange">
+<nav class="navbar navbar-expand-md navbar-light bg-light fixed-top py-3 box-shadow">
+  <a routerLink="" class="navbar-brand">
+    <!-- <img src="img/Trivago.png" alt="Fino&Sabor"> -->
+    Fino&Sabor
+  </a>
+  
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Abrir Navegação">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categorias</a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a *ngFor= "let categoria of categorias" class="dropdown-item" [routerLink]="['/produtos/categoria',categoria.slug]">{{categoria.nome}}</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/pedidos/carrinho">Carrinho</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/contato">Contato</a>
+      </li>
+      <app-cabecalho-login></app-cabecalho-login>
+      
+    </ul>
+  </div>
+</nav>
+
+
+
+
+<!-- <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-orange">
   <a class="navbar-brand" href="#void" routerLink=""> Fino&Sabor</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -38,4 +71,4 @@
 
     </form>
   </div>
-</nav>
+</nav> -->

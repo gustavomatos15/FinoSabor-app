@@ -1,10 +1,11 @@
 <ul [ngSwitch]="usuarioLogado()" class="navbar-nav">
-    <li *ngSwitchCase="false" class="nav-item" style="padding-right: 30px;">
-        <a class="btn btn-primary" routerLink="/login">Entrar</a>
-    </li>
+
     <li *ngSwitchCase="false" class="nav-item">
-        <a class="btn btn-success" routerLink="/registrar">Crie sua conta</a>
-    </li>
+        <a class="nav-link" routerLink="/login" data-toggle="modal" data-target="#modalLogin">Login</a>
+      </li>
+      <li *ngSwitchCase="false" class="nav-item">
+        <a class="btn btn-outline-primary ml-md-2" routerLink="/registrar">Inscreva-se</a>
+      </li>
 
     <div class="dropdown">
         <a *ngSwitchCase="true" class="nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-toggle="dropdown"

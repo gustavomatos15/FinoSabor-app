@@ -1,0 +1,24 @@
+.contato{
+	padding:70px;
+	height:500px;
+	background-color:#4F4F4F;
+	display:grid;
+	grid-template-columns:30% 30%;
+	color:White;
+	font-family: inherit;
+	font-size:25pt;
+	font-style: inherit;
+	text-align:center;
+}
+
+.formulario{
+	text-align:justify;
+	color:#fff;
+	background-color:#4F4F4F;
+	height:150px;
+	color:white;
+	font-family: inherit;
+	font-size:20pt;
+	font-style: italic;
+	padding:50px;
+}
