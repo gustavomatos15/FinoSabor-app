@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { NavegacaoModule } from './navegacao/navegacao.module';
 import { environment } from '../environments/environment';
 import { ErrorInterceptor } from './services/error.handler.service';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { ErrorInterceptor } from './services/error.handler.service';
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     NavegacaoModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot()
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }

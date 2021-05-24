@@ -60,3 +60,8 @@ h1{
 	color: #f39c12;
 	font-size: 15px;
 }
+
+.container{
+	padding-top: 90px;
+	padding-bottom: 300px;
+}

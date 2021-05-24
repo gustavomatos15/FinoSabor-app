@@ -2,6 +2,7 @@ import { AfterViewInit, Component, ElementRef, OnInit, ViewChildren } from '@ang
 import { FormBuilder, FormControl, FormControlName, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CustomValidators } from 'ngx-custom-validators';
+import { ToastrService } from 'ngx-toastr';
 import { FormBaseComponent } from 'src/app/base-components/form-base.component';
 import { ContaService } from '../services/conta.service';
 
@@ -19,6 +20,7 @@ export class EsqueceuSenhaComponent extends FormBaseComponent implements OnInit,
   esqueceuSenhaForm: FormGroup;
   
   constructor(private fb: FormBuilder,
+    private toastr: ToastrService,
     private contaService: ContaService) { 
 
       super();
@@ -54,13 +56,12 @@ export class EsqueceuSenhaComponent extends FormBaseComponent implements OnInit,
   }
 
   processarSucesso(response: any) {
-
-    // email enviado com sucesso
+    this.toastr.success('email enviado com sucesso', 'Sucesso');
   }
 
   processarFalha(fail: any) {
     this.errors = fail.error.errors;
-    // this.toastr.error('Ocorreu um erro!', 'Opa :(');
+    this.toastr.error('Ocorreu um erro!', 'Opa :(');
   }
 
 }

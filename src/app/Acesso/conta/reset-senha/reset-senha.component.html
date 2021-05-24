@@ -5,7 +5,7 @@
 
     <div class="txt">
         <label for="pass">Senha:</label>
-        <input type="password" id="senha" name="password" placeholder= " Digite a sua senha"
+        <input class="form-control" type="password" id="senha" name="password" placeholder= " Digite a sua senha"
             minlength="8" required formControlName="senha">
             <span class="text-danger" *ngIf="resetForm.get('senha').errors &&  resetForm.get('senha').touched">
                 <p [innerHTML]="displayMessage.senha"></p>
@@ -13,16 +13,20 @@
         
     </div><!-- --><!-- txt -->
 
+    <br>
+
     <div class="txt">
         <label for="pass">Confirmação de Senha:</label>
-        <input [(ngModel)]="this.resetSenha.password" type="password" id="pass" name="senhaConfirm" placeholder= " Confirme a sua senha"
+        <input [(ngModel)]="this.resetSenha.password" class="form-control" type="password" id="pass" name="senhaConfirm" placeholder= " Confirme a sua senha"
             minlength="8" required formControlName="senhaConfirm">
             <span class="text-danger" *ngIf="resetForm.get('senhaConfirm').errors &&  resetForm.get('senhaConfirm').touched">
                 <p [innerHTML]="displayMessage.senhaConfirm"></p>
             </span>  
     </div>
-
+    <br>
     <button type="submit" class="btn btn-primary" [disabled]="!resetForm.valid" value="Cadastrar" (click)="mudarSenha()">Mudar Senha</button>
+
+    
 
     <div class="alert alert-danger" *ngIf="errors.length > 0">
         <h3 id="msgRetorno">Opa! Alguma coisa não deu certo:</h3>

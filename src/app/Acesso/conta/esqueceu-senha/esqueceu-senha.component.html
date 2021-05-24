@@ -1,14 +1,17 @@
+
+
+
 <div class = "container" novalidate [formGroup]="esqueceuSenhaForm" >
 
 <div class="txt">
     <h1>Recuperar senha:</h1>
     <label for="email">E-mail:</label>
-    <input [(ngModel)]="email" type="text" name="email" id="email" placeholder= " Digite seu e-mail" formControlName="email" [ngClass]="{'is-invalid': esqueceuSenhaForm.get('email').errors &&  esqueceuSenhaForm.get('email').touched }">
+    <input [(ngModel)]="email" type="text" class="form-control" name="email" id="email" placeholder= " Digite seu e-mail" formControlName="email" [ngClass]="{'is-invalid': esqueceuSenhaForm.get('email').errors &&  esqueceuSenhaForm.get('email').touched }">
     <span class="text-danger" *ngIf="esqueceuSenhaForm.get('email').errors &&  esqueceuSenhaForm.get('email').touched">
         <p [innerHTML]="displayMessage.email"></p>
     </span>
 </div><!-- txt -->
-
+<br>
 <button type="submit" class="btn btn-primary" [disabled]="!esqueceuSenhaForm.valid" (click)="esqueceuSenha()">Recuperar conta</button>
 
     <div class="alert alert-danger" *ngIf="errors.length > 0">

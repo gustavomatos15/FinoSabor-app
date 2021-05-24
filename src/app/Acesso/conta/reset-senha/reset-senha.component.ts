@@ -7,6 +7,7 @@ import { FormBaseComponent } from 'src/app/base-components/form-base.component';
 import { Usuario } from '../../autenticacao/models/Usuario';
 import { ContaService } from '../services/conta.service';
 import { ResetSenha } from '../models/reset-senha';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-reset-senha',
@@ -25,6 +26,7 @@ export class ResetSenhaComponent extends FormBaseComponent implements OnInit, Af
   constructor(private activatedRouteoute: ActivatedRoute,
     private fb: FormBuilder,
     private router: Router,
+    private toastr: ToastrService,
     private contaService: ContaService) {
 
     super();
@@ -84,13 +86,12 @@ export class ResetSenhaComponent extends FormBaseComponent implements OnInit, Af
     this.resetForm.reset();
     this.errors = [];
 
-    this.router.navigate(['/login']);
-    /*let toast = this.toastr.success('Registro realizado com Sucesso!', 'Bem vindo!!!');
+    let toast = this.toastr.success('Senha alterada com Sucesso!, faça o login no sistema', 'Sucesso');
     if (toast) {
       toast.onHidden.subscribe(() => {
-        this.router.navigate(['']);
+        this.router.navigate(['/login']);
       });
-    }*/
+    }
   }
 
   processarFalha(fail: any) {

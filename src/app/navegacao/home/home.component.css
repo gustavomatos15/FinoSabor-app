@@ -1,3 +1,7 @@
 p{
     margin-top: 0px;
 }
+#home-quote {
+    background: url('../../../assets/img/7.jpg') center center;
+    background-size: cover;
+  }
