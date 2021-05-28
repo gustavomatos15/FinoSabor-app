@@ -5,7 +5,10 @@ import { catchError, map } from "rxjs/operators";
 import { BaseService } from 'src/app/services/base.service';
 import { Pedido } from '../models/Pedido';
 
-@Injectable()
+@Injectable({
+    providedIn: 'root'
+  })
+  
 export class PedidoService extends BaseService {
 
     constructor(private http: HttpClient) { super(); }

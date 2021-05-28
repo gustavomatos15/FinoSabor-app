@@ -13,14 +13,14 @@
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categorias</a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a *ngFor= "let categoria of categorias" class="dropdown-item" [routerLink]="['/produtos/categoria',categoria.slug]">{{categoria.nome}}</a>
+          <a *ngFor= "let categoria of categorias"  class="dropdown-item" [routerLink]="['/produtos/categoria',categoria.slug]">{{categoria.nome}}</a>
         </div>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="/pedidos/carrinho">Carrinho</a>
+        <a class="nav-link" routerLink="/pedidos/carrinho" routerLinkActive="active">Carrinho</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="/contato">Contato</a>
+        <a class="nav-link" routerLink="/contato" routerLinkActive="active">Contato</a>
       </li>
       <app-cabecalho-login></app-cabecalho-login>
       

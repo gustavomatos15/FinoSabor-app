@@ -1,9 +1,12 @@
+import { group } from '@angular/animations';
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChildren } from '@angular/core';
-import { FormBuilder, FormControl, FormControlName, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormControlName, FormGroup, ValidatorFn, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CustomValidators } from 'ngx-custom-validators';
+import { ToastrService } from 'ngx-toastr';
 import { FormBaseComponent } from 'src/app/base-components/form-base.component';
-import { Usuario } from '../models/Usuario';
+import { matchOtherValidator } from 'src/app/utils/confirm-equal-validator.directive';
+import { Registrar } from '../models/Registrar';
 import { AutenticaoService } from '../services/autenticacao.service';
 
 @Component({
@@ -17,9 +20,10 @@ export class RegistrarComponent extends FormBaseComponent implements OnInit, Aft
   
   errors: any[] = [];
   cadastroForm: FormGroup;
-  usuario: Usuario;
+  usuario: Registrar;
 
   constructor(private fb: FormBuilder,
+    private toastr: ToastrService,
     private authService: AutenticaoService,
     private router: Router) {
       
@@ -32,32 +36,30 @@ export class RegistrarComponent extends FormBaseComponent implements OnInit, Aft
         },
         nome: {
           required: 'Informe o nome',
-          rangeLength: 'O nome deve possuir entre 2 e 60 caracteres'
+          rangeLength: 'O nome deve possuir entre 2 e 100 caracteres'
         },
         senha: {
           required: 'Informe a senha',
-          rangeLength: 'A senha deve possuir entre 6 e 15 caracteres'
+          rangeLength: 'A senha deve possuir entre 6 e 100 caracteres'
         },
         senhaConfirm: {
           required: 'Informe a senha novamente',
-          rangeLength: 'A senha deve possuir entre 6 e 15 caracteres',
+          rangeLength: 'A senha deve possuir entre 6 e 100 caracteres',
           equalTo: 'As senhas não conferem'
         }
       };
   
       super.configurarMensagensValidacaoBase(this.validationMessages);
     }
-
+ 
     ngOnInit(): void {
 
-      let senha = new FormControl('', [Validators.required/*, CustomValidators.rangeLength([6, 15])*/]);
-      let senhaConfirm = new FormControl('', [Validators.required, /*CustomValidators.rangeLength([6, 15]), CustomValidators.equalTo(senha)*/]);
-  
       this.cadastroForm = this.fb.group({
+
         email: ['', [Validators.required, Validators.email]],
         nome: ['', [Validators.required, CustomValidators.rangeLength([2, 60])]],
-        senha: senha,
-        senhaConfirm: senhaConfirm
+        senha: ['', [Validators.required, CustomValidators.rangeLength([6, 100])]],
+        senhaConfirm: ['', [Validators.required, matchOtherValidator('senha'), CustomValidators.rangeLength([6, 100])]],
       });
     }
 
@@ -85,13 +87,13 @@ export class RegistrarComponent extends FormBaseComponent implements OnInit, Aft
       this.errors = [];
   
       this.authService.LocalStorage.salvarDadosLocaisUsuario(response);
-      this.router.navigate(['']);
-      /*let toast = this.toastr.success('Registro realizado com Sucesso!', 'Bem vindo!!!');
+
+      let toast = this.toastr.success('Registro realizado com Sucesso!', 'Bem vindo!!!');
       if (toast) {
         toast.onHidden.subscribe(() => {
           this.router.navigate(['']);
         });
-      }*/
+      }
     }
   
     processarFalha(fail: any) {

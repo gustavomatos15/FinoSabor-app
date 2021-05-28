@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { catchError, map } from "rxjs/operators";
 import { BaseService } from '../../../services/base.service';
-import { Usuario } from '../../autenticacao/models/Usuario';
+import { Registrar } from '../../autenticacao/models/Registrar';
 import { ResetSenha } from '../models/reset-senha';
 
 @Injectable()
@@ -12,7 +12,7 @@ export class ContaService extends BaseService {
     constructor(private http: HttpClient) { super(); }
 
 
-    esqueceSenha(email: string): Observable<Usuario> {
+    esqueceSenha(email: string): Observable<Registrar> {
         let response = this.http
             .post(this.UrlServiceV1 + `Conta/EsqueceuSenha?email=${email}`, this.ObterHeaderJson())
             .pipe(

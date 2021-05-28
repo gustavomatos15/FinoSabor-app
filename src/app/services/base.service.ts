@@ -61,6 +61,14 @@ export abstract class BaseService {
             customResponse.error.errors = customError;
             return throwError(customResponse);
         }
+        if (response.status === 404) {
+
+            
+         
+                                    
+            customResponse.error.errors = customError;
+            return throwError(customResponse);
+        }
 
         console.error(response);
         return throwError(response);

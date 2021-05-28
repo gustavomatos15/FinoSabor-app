@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
 import { Pedido } from '../models/Pedido';
 
@@ -14,8 +14,10 @@ export class DetalhesComponent {
   public UrlImagem: string = environment.imagensurl;
   pedido: Pedido;
 
-  constructor(private route: ActivatedRoute) {
-
+  constructor(private route: ActivatedRoute,
+    private router: Router) {
     this.pedido = this.route.snapshot.data['pedido'];
+
+    if (this.pedido == null) this.router.navigate(['/pedidos/lista']);
   }
 }

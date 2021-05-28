@@ -21,9 +21,6 @@ import { PedidoService } from './services/pedido.service';
   imports: [
     PedidoRoutingModule,
     CommonModule
-  ],
-  providers: [
-    PedidoService
   ]
 })
 export class PedidoModule { }

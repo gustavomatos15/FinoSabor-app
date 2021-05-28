@@ -35,7 +35,7 @@
             minlength="8" required formControlName="senhaConfirm">
             <span class="text-danger" *ngIf="cadastroForm.get('senhaConfirm').errors &&  cadastroForm.get('senhaConfirm').touched">
                 <p [innerHTML]="displayMessage.senhaConfirm"></p>
-            </span>  
+            </span>
     </div>
 
     <button type="submit" class="btn btn-primary" [disabled]="!cadastroForm.valid" value="Cadastrar" (click)="adicionarConta()">Registrar</button>

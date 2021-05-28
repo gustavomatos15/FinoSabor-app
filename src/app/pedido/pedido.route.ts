@@ -15,7 +15,7 @@ const pedidoRouterConfig: Routes = [
       {
          path: 'detalhes/:id', component: DetalhesComponent,
          resolve: {
-          produto: PedidoResolve
+          pedido: PedidoResolve
         }
         
       },

@@ -1,1 +1,86 @@
-<p>trocar-senha works!</p>
+<div class="container">
+  <main role="main" class="pb-3">
+
+    <br>
+    <br>
+    <h2>Gerencie sua conta</h2>
+
+    <div>
+      <h4>Altere as configurações da sua conta</h4>
+      <hr>
+      <div class="row">
+        <div class="col-md-3">
+          <app-menu></app-menu>
+
+        </div>
+        <div class="col-md-9">
+
+          <h4>Trocar senha</h4>
+
+
+          <div class="row">
+            <div class="col-md-6">
+
+              <form novalidate [formGroup]="mudarSenhaForm">
+
+                <div class="txt">
+                  <label for="pass">Senha Atual:</label>
+                  <input class="form-control" type="password" id="senhaAtual" name="password"
+                    placeholder=" Digite a sua senha atual" minlength="8" required formControlName="senhaAtual">
+                  <span class="text-danger"
+                    *ngIf="mudarSenhaForm.get('senhaAtual').errors &&  mudarSenhaForm.get('senhaAtual').touched">
+                    <p [innerHTML]="displayMessage.senhaAtual"></p>
+                  </span>
+
+                </div><!-- -->
+                <!-- txt -->
+
+                <div class="txt">
+                  <label for="pass">Nova Senha:</label>
+                  <input class="form-control" type="password" id="novaSenha" name="password"
+                    placeholder=" Digite sua nova senha" minlength="8" required formControlName="novaSenha">
+                  <span class="text-danger"
+                    *ngIf="mudarSenhaForm.get('novaSenha').errors &&  mudarSenhaForm.get('novaSenha').touched">
+                    <p [innerHTML]="displayMessage.novaSenha"></p>
+                  </span>
+
+                </div><!-- -->
+                <!-- txt -->
+
+                <br>
+
+                <div class="txt">
+                  <label for="pass">Confirmação de Senha:</label>
+                  <input class="form-control" type="password" id="pass" name="novaSenhaConfirm"
+                    placeholder=" Confirme a sua senha" minlength="8" required formControlName="novaSenhaConfirm">
+                  <span class="text-danger"
+                    *ngIf="mudarSenhaForm.get('novaSenhaConfirm').errors &&  mudarSenhaForm.get('novaSenhaConfirm').touched">
+                    <p [innerHTML]="displayMessage.novaSenhaConfirm"></p>
+                  </span>
+                </div>
+                <br>
+                <button type="submit" class="btn btn-primary" [disabled]="!mudarSenhaForm.valid" value="Cadastrar"
+                  (click)="MudarSenha()">Mudar Senha</button>
+
+
+
+                <div class="alert alert-danger" *ngIf="errors.length > 0">
+                  <h3 id="msgRetorno">Opa! Alguma coisa não deu certo:</h3>
+                  <ul>
+                    <li *ngFor="let error of errors">{{ error }}</li>
+                  </ul>
+                </div>
+
+              </form>
+
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+
+
+  </main>
+</div>

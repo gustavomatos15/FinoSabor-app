@@ -1,8 +1,9 @@
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChildren } from '@angular/core';
 import { FormBuilder, FormControl, FormControlName, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { CustomValidators } from 'ngx-custom-validators';
 import { FormBaseComponent } from 'src/app/base-components/form-base.component';
-import { Usuario } from '../models/Usuario';
+import { Registrar } from '../models/Registrar';
 import { AutenticaoService } from '../services/autenticacao.service';
 
 @Component({
@@ -16,7 +17,7 @@ export class LoginComponent  extends FormBaseComponent implements OnInit, AfterV
   
   errors: any[]=[];
   loginForm:FormGroup;
-  usuario: Usuario;
+  usuario: Registrar;
 
   constructor(private fb: FormBuilder,
     private authService: AutenticaoService,
@@ -31,8 +32,7 @@ export class LoginComponent  extends FormBaseComponent implements OnInit, AfterV
         },
         senha: {
           required: 'Informe a senha',
-          maxLength: 'A senha deve possuir entre 6 e 15 caracteres',
-          minLength:'A senha deve possuir entre 6 e 15 caracteres'
+          rangeLength: 'A senha deve possuir entre 6 e 100 caracteres',
 
         }
       };
@@ -44,7 +44,7 @@ export class LoginComponent  extends FormBaseComponent implements OnInit, AfterV
   
       this.loginForm = this.fb.group({
         email: ['', [Validators.required, Validators.email]],
-        senha: ['', [Validators.required, Validators.maxLength(100), Validators.minLength(2)]],
+        senha: ['', [Validators.required, CustomValidators.rangeLength([6, 100])]],
       });
     }
 

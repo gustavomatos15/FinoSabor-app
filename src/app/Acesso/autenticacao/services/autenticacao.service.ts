@@ -3,14 +3,14 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { catchError, map } from "rxjs/operators";
 import { BaseService } from '../../../services/base.service';
-import { Usuario } from '../models/Usuario';
+import { Registrar } from '../models/Registrar';
 
 @Injectable()
 export class AutenticaoService extends BaseService {
 
     constructor(private http: HttpClient) { super(); }
 
-    registrarUsuario(usuario: Usuario): Observable<Usuario> {
+    registrarUsuario(usuario: Registrar): Observable<Registrar> {
         let response = this.http
             .post(this.UrlServiceV1 + 'nova-conta', usuario, this.ObterHeaderJson())
             .pipe(
@@ -20,7 +20,7 @@ export class AutenticaoService extends BaseService {
         return response;
     }
 
-    login(usuario: Usuario): Observable<Usuario> {
+    login(usuario: Registrar): Observable<Registrar> {
         let response = this.http
             .post(this.UrlServiceV1 + 'autenticar', usuario, this.ObterHeaderJson())
             .pipe(
@@ -30,7 +30,7 @@ export class AutenticaoService extends BaseService {
         return response;
     }
 
-    refreshToken(): Observable<Usuario> {
+    refreshToken(): Observable<Registrar> {
         let response = this.http
             .post(`${this.UrlServiceV1}refresh-token?refreshToken=${this.getRefreshToken()}`, null, this.ObterAuthHeaderJson())
             .pipe(

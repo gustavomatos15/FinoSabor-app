@@ -4,10 +4,11 @@ import { Router } from '@angular/router';
 import { CustomValidators } from 'ngx-custom-validators';
 import { ActivatedRoute } from '@angular/router';
 import { FormBaseComponent } from 'src/app/base-components/form-base.component';
-import { Usuario } from '../../autenticacao/models/Usuario';
+import { Registrar } from '../../autenticacao/models/Registrar';
 import { ContaService } from '../services/conta.service';
 import { ResetSenha } from '../models/reset-senha';
 import { ToastrService } from 'ngx-toastr';
+import { matchOtherValidator } from 'src/app/utils/confirm-equal-validator.directive';
 
 @Component({
   selector: 'app-reset-senha',
@@ -21,7 +22,6 @@ export class ResetSenhaComponent extends FormBaseComponent implements OnInit, Af
   errors: any[] = [];
   resetForm: FormGroup;
   resetSenha: ResetSenha = new ResetSenha();
-  usuario: Usuario;
   
   constructor(private activatedRouteoute: ActivatedRoute,
     private fb: FormBuilder,
@@ -34,11 +34,11 @@ export class ResetSenhaComponent extends FormBaseComponent implements OnInit, Af
       this.validationMessages = {
         senha: {
           required: 'Informe a senha',
-          rangeLength: 'A senha deve possuir entre 6 e 15 caracteres'
+          rangeLength: 'A senha deve possuir entre 6 e 100 caracteres'
         },
         senhaConfirm: {
           required: 'Informe a senha novamente',
-          rangeLength: 'A senha deve possuir entre 6 e 15 caracteres',
+          rangeLength: 'A senha deve possuir entre 6 e 100 caracteres',
           equalTo: 'As senhas não conferem'
         }
       };
@@ -49,12 +49,9 @@ export class ResetSenhaComponent extends FormBaseComponent implements OnInit, Af
 
   ngOnInit() {
 
-    let senha = new FormControl('', [Validators.required/*, CustomValidators.rangeLength([6, 15])*/]);
-    let senhaConfirm = new FormControl('', [Validators.required, /*CustomValidators.rangeLength([6, 15]), CustomValidators.equalTo(senha)*/]);
-  
       this.resetForm = this.fb.group({
-        senha: senha,
-        senhaConfirm: senhaConfirm
+        senha: ['', [Validators.required, CustomValidators.rangeLength([6, 100])]],
+        senhaConfirm: ['', [Validators.required, matchOtherValidator('senha'), CustomValidators.rangeLength([6, 100])]],
       });
 
       this.resetSenha.userId = this.activatedRouteoute.snapshot.queryParams['userId'];
