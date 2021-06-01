@@ -10,19 +10,19 @@ const routes: Routes = [
 
   {
     path: '',
-    loadChildren: () => import('./acesso/autenticacao/autenticacao.module')
+    loadChildren: () => import('./Acesso/autenticacao/autenticacao.module')
       .then(a => a.AutenticacaoModule)
   },
 
   {
     path: 'conta',
-    loadChildren: () => import('./acesso/conta/conta.module')
+    loadChildren: () => import('./Acesso/conta/conta.module')
       .then(a => a.ContaModule)
   },
 
   {
     path: 'gerenciar',
-    loadChildren: () => import('./acesso/gerenciar/gerenciar.module')
+    loadChildren: () => import('./Acesso/gerenciar/gerenciar.module')
       .then(a => a.GerenciarModule)
   },
 
