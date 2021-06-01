@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChildren } from '@angular/core';
 import { FormBuilder, FormControl, FormControlName, FormGroup, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
-import { FormBaseComponent } from 'src/app/base-components/form-base.component';
+import { FormBaseComponent } from 'src/app/shared/base-components/form-base.component';
 import { ContaService } from '../services/conta.service';
 
 @Component({

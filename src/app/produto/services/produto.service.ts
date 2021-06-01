@@ -3,8 +3,8 @@ import { HttpClient } from '@angular/common/http';
 
 import { Observable } from 'rxjs';
 import { catchError, map } from "rxjs/operators";
-import { BaseService } from '../../services/base.service';
 import { Produto } from '../../navegacao/models/Produto';
+import { BaseService } from 'src/app/shared/services/base.service';
 
 @Injectable({
     providedIn: 'root'

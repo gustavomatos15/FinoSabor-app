@@ -18,20 +18,7 @@
               </div>
           </div>
       </div>
-      <div class="carousel-item">
-          <img class="second-slide" src="../../../assets/img/10.jpg">
-               alt="Second slide">
-          <div class="container">
-              <div class="carousel-caption">
-                  <h1>Another example headline.</h1>
-                  <p>
-                      Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta
-                      gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
-                  </p>
-                  <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
-              </div>
-          </div>
-      </div>
+
       <div class="carousel-item">
           <img class="third-slide" src="../../../assets/img/3.jpg">
                alt="Third slide">
@@ -77,83 +64,11 @@
                 
                       <div class="col-md-3"
                         *ngFor= "let produto of produtos">
-                          <figure class="card card-product">
-                            <a [routerLink]="['/produtos/detalhes',produto.slug]">
-                              <div class="img-wrap">
-                                  <img src={{UrlImagem+produto.imagem_principal}} />
-
-                              </div>
-                              <figcaption class="info-wrap">
-                                  <h4 class="title">{{produto.nome}}</h4>
-                              </figcaption>
-                              <div class="bottom-wrap">
-
-                                  <a class="btn btn-sm btn-primary float-right" href="#void" >Adicionar ao Carrinho</a>
-
-                                  <div class="price-wrap h5">
-                                      <span class="price-new">{{produto.valor | currency:"BRL":"symbol"}}</span>
-                                  </div> <!-- price-wrap.// -->                               
-                              </div> <!-- bottom-wrap.// -->
-                            </a>
-                          </figure>
+                          <app-produto-lista [produto]="produto"></app-produto-lista>
                       </div> <!-- col // -->
                 
               </div> <!-- row.// -->    
           </div>
-          
-          <section id="home-quote" class="p-md-5">
-            <blockquote class="blockquote text-center text-white p-md-5 p-3">
-              <p class="display-4"><em>"A felicidade não está na estrada que leva a algum lugar. A felicidade é a própria estrada."</em></p>
-              <footer class="blockquote-footer text-white">Bob Dylan</footer>
-            </blockquote>
-          </section>
+      
 
-          <section class="container">
-            <div class="my-5 text-center">
-              <span class="h6 d-block">AINDA ESTÁ COM DÚVIDAS?</span>
-              <h2 class="display-4 text-primary">Perguntas Frequentes</h2>
-            </div>
-            <div class="row justify-content-center">
-              <div class="col-md-6" id="perguntasFrequentes" data-children=".pergunta">
-                <div class="pergunta py-2">
-                  <a class="lead" data-toggle="collapse" data-parent="#perguntasFrequentes" href="#pergunta1" aria-expanded="true" aria-controls="pergunta1">→ É possível cancelar a viagem?</a>
-                  <div id="pergunta1" class="collapse show" role="tabpanel">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pretium lorem non vestibulum scelerisque. Proin a vestibulum sem, eget tristique massa. Aliquam lacinia rhoncus nibh quis ornare.</p>
-                  </div>
-                </div>
-                <div class="dropdown-divider"></div>
-                <div class="pergunta py-2">
-                  <a class="lead" data-toggle="collapse" data-parent="#perguntasFrequentes" href="#pergunta2" aria-expanded="true" aria-controls="pergunta2">→ Qual a garantia que tenho se perder o voo?</a>
-                  <div id="pergunta2" class="collapse" role="tabpanel">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pretium lorem non vestibulum scelerisque. Proin a vestibulum sem, eget tristique massa. Aliquam lacinia rhoncus nibh quis ornare.</p>
-                  </div>
-                </div>
-                <div class="dropdown-divider"></div>
-                <div class="pergunta py-2">
-                  <a class="lead" data-toggle="collapse" data-parent="#perguntasFrequentes" href="#pergunta3" aria-expanded="true" aria-controls="pergunta3">→ Qual a principal forma de viagem?</a>
-                  <div id="pergunta3" class="collapse" role="tabpanel">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pretium lorem non vestibulum scelerisque. Proin a vestibulum sem, eget tristique massa. Aliquam lacinia rhoncus nibh quis ornare.</p>
-                  </div>
-                </div>
-                <div class="dropdown-divider"></div>
-                <div class="pergunta py-2">
-                  <a class="lead" data-toggle="collapse" data-parent="#perguntasFrequentes" href="#pergunta4" aria-expanded="true" aria-controls="pergunta4">→ Qual o melhor destino de viagem?</a>
-                  <div id="pergunta4" class="collapse" role="tabpanel">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pretium lorem non vestibulum scelerisque. Proin a vestibulum sem, eget tristique massa. Aliquam lacinia rhoncus nibh quis ornare.</p>
-                  </div>
-                </div>
-                <div class="dropdown-divider"></div>
-                <div class="pergunta py-2">
-                  <a class="lead" data-toggle="collapse" data-parent="#perguntasFrequentes" href="#pergunta5" aria-expanded="true" aria-controls="pergunta5">→ Vocês dão descontos para grupos grandes?</a>
-                  <div id="pergunta5" class="collapse" role="tabpanel">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pretium lorem non vestibulum scelerisque. Proin a vestibulum sem, eget tristique massa. Aliquam lacinia rhoncus nibh quis ornare.</p>
-                  </div>
-                </div>
-                <div class="dropdown-divider"></div>
-              </div>
-            </div>
-            <div class="text-center my-4">
-              <p class="small m-1">FALE CONOSCO PARA MAIS DÚVIDAS</p>
-              <a class="btn btn-primary btn-lg" href="contato.html">Entre em Contato</a>
-            </div>
-          </section>
+          

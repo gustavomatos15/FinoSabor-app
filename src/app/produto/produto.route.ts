@@ -3,7 +3,6 @@ import { Routes, RouterModule } from '@angular/router';
 import { ProdutoAppComponent } from './produto.app.component';
 import { ProdutoResolve } from '../produto/services/produto.resolve';
 import { BuscarComponent } from './buscar/buscar.component';
-import { ListaComponent } from './lista/lista.component';
 import { DetalhesComponent } from './detalhes/detalhes.component';
 import { CategoriaComponent } from './categoria/categoria.component';
 import { CarrinhoComponent } from '../pedido/carrinho/carrinho.component';
@@ -18,8 +17,7 @@ const produtoRouterConfig: Routes = [
                     produto: ProdutoResolve
                 }
             },
-            { path: 'categoria/:slug', component: CategoriaComponent },
-            { path: 'lista', component: ListaComponent }
+            { path: 'categoria/:slug', component: CategoriaComponent }
         ]
     }
 ];

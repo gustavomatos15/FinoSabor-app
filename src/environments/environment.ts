@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  apiUrl:'https://sistema-erp.azurewebsites.net/api/',
-  imagensurl: 'https://sistema-erp.azurewebsites.net/imagens/'
+  apiUrl: 'https://api.finosabor.me/api/',
+  imagensurl: 'https://api.finosabor.me/imagens/'
 };
 
 /*

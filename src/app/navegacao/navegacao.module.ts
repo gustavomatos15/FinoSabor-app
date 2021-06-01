@@ -8,6 +8,7 @@ import { Error404Component } from './error404/error404.component';
 import { CabecalhoLoginComponent } from './cabecalho-login/cabecalho-login.component';
 import { RouterModule } from '@angular/router';
 import { ContatoComponent } from './contato/contato.component';
+import { ProdutoModule } from '../produto/produto.module';
 
 
 

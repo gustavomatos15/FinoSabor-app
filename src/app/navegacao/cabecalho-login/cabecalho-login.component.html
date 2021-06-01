@@ -1,34 +1,34 @@
 <ul [ngSwitch]="usuarioLogado()" class="navbar-nav">
 
+<<<<<<< HEAD
+  <li *ngSwitchCase="false" class="nav-item">
+    <a class="nav-link" routerLink="/login" routerLinkActive="active">Login</a>
+  </li>
+  <li *ngSwitchCase="false" class="nav-item">
+    <a class="btn btn-outline-primary ml-md-2" routerLink="/registrar" routerLinkActive="active">Inscreva-se</a>
+  </li>
+=======
     <li *ngSwitchCase="false" class="nav-item">
         <a class="nav-link" routerLink="/login" routerLinkActive="active">Login</a>
       </li>
       <li *ngSwitchCase="false" class="nav-item">
         <a class="btn btn-outline-primary ml-md-2" routerLink="/registrar" routerLinkActive="active">Inscreva-se</a>
       </li>
+>>>>>>> 0ea2fe50f7358c0539228942fe9d08589835db4b
 
-    <div class="dropdown">
-        <a *ngSwitchCase="true" class="nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-           aria-haspopup="true" aria-expanded="false">
-          <i class="fas fa-list-ul"></i> {{ nome }}
-        </a>
-        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-
-            <li *ngSwitchCase="true" class="nav-item">
-                <a class="nav-link text-dark" routerLink="/pedidos/lista" href="#void">
-                    Meus Pedidos <span class="fas fa-sign-out-alt"></span></a>
-            </li>
-            <li *ngSwitchCase="true" class="nav-item">
-                <a class="nav-link text-dark" routerLink="/gerenciar/perfil" href="#void">
-                    Perfil <span class="fas fa-sign-out-alt"></span></a>
-            </li>
-            <li *ngSwitchCase="true" class="nav-item">
-                <a class="nav-link text-dark" href="#void" (click)="logout()">
-                    Sair <span class="fas fa-sign-out-alt"></span></a>
-            </li>
-          </ul>
-       
+  <li *ngSwitchCase="true" class="nav-item dropdown no-arrow">
+    <div class="nav-item dropdown no-arrow"><a href="javascript:void(0)" class="dropdown-toggle nav-link"
+        aria-expanded="false" data-bs-toggle="dropdown"><span 
+          class="d-lg-inline">{{ nome }}</span></a>
+      <div class="dropdown-menu shadow dropdown-menu-end animated--grow-in">
+        <a class="dropdown-item"
+          href="javascript:void(0)" routerLink="/pedidos/lista"><i class="fas fa-user fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Meus Pedidos</a>
+        <a class="dropdown-item"
+          href="javascript:void(0)" routerLink="/gerenciar/perfil"><i class="fas fa-user fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Perfil</a>
+        <div class="dropdown-divider"></div><a class="dropdown-item" href="javascript:void(0)" (click)="logout()"><i
+            class="fas fa-sign-out-alt fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Sair</a>
       </div>
-
+    </div>
+  </li>
 
 </ul>

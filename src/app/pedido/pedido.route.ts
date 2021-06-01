@@ -2,9 +2,9 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DetalhesComponent } from '../pedido/detalhes/detalhes.component';
 import { CarrinhoComponent } from './carrinho/carrinho.component';
+import { FinalizarPedidoComponent } from './finalizar-pedido/finalizar-pedido.component';
 import { ListaComponent } from './lista/lista.component';
 import { PedidoAppComponent } from './pedido.app.component';
-import { RealizarPedidoComponent } from './realizar-pedido/realizar-pedido.component';
 import { PedidoResolve } from './services/pedido.resolve';
 
 const pedidoRouterConfig: Routes = [
@@ -20,7 +20,7 @@ const pedidoRouterConfig: Routes = [
         
       },
       { path: 'lista', component: ListaComponent },
-      { path: 'realizar-pedido', component: RealizarPedidoComponent },
+      { path: 'finalizar-pedido', component: FinalizarPedidoComponent }
 
     ]
 

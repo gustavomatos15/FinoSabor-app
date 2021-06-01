@@ -2,15 +2,8 @@
   "ExpandedNodes": [
     "",
     "\\src",
-    "\\src\\app",
-    "\\src\\app\\Acesso",
-    "\\src\\app\\Acesso\\autenticacao",
-    "\\src\\app\\Acesso\\autenticacao\\registrar",
-    "\\src\\app\\produto",
-    "\\src\\app\\produto\\categoria",
-    "\\src\\app\\produto\\detalhes",
-    "\\src\\app\\produto\\services"
+    "\\src\\app"
   ],
-  "SelectedNode": "\\src\\app\\Acesso\\autenticacao\\registrar\\registrar.component.ts",
+  "SelectedNode": "\\src\\app\\app-routing.module.ts",
   "PreviewInSolutionExplorer": false
 }

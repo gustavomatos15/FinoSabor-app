@@ -4,8 +4,13 @@ import { FormBuilder, FormControl, FormControlName, FormGroup, ValidatorFn, Vali
 import { Router } from '@angular/router';
 import { CustomValidators } from 'ngx-custom-validators';
 import { ToastrService } from 'ngx-toastr';
+<<<<<<< HEAD
+import { FormBaseComponent } from 'src/app/shared/base-components/form-base.component';
+import { matchOtherValidator } from 'src/app/shared/utils/confirm-equal-validator.directive';
+=======
 import { FormBaseComponent } from 'src/app/base-components/form-base.component';
 import { matchOtherValidator } from 'src/app/utils/confirm-equal-validator.directive';
+>>>>>>> 0ea2fe50f7358c0539228942fe9d08589835db4b
 import { Registrar } from '../models/Registrar';
 import { AutenticaoService } from '../services/autenticacao.service';
 

@@ -43,11 +43,19 @@
 
                   <div class="col">
                     <div class="mb-3">
+<<<<<<< HEAD
+                      <label class="form-label" for="telefone"><strong>Telefone</strong></label>
+                      <input class="form-control" type="telefone" id="telefone" placeholder="(00) 000000-0000" name="telefone"
+                        formControlName="telefone" [ngClass]="{'is-invalid': displayMessage.telefone }">
+                      <span class="text-danger" *ngIf="displayMessage.telefone">
+                        <p [innerHTML]="displayMessage.telefone"></p>
+=======
                       <label class="form-label" for="email"><strong>Email</strong></label>
                       <input class="form-control" type="email" id="email" placeholder="email@email.com" name="email"
                         formControlName="email" [ngClass]="{'is-invalid': displayMessage.email }">
                       <span class="text-danger" *ngIf="displayMessage.email">
                         <p [innerHTML]="displayMessage.email"></p>
+>>>>>>> 0ea2fe50f7358c0539228942fe9d08589835db4b
                       </span>
                     </div>
                   </div>
@@ -70,9 +78,15 @@
                       <label class="form-label" for="last_name"><strong>Data de Nascimento</strong></label>
                       <input class="form-control" type="date" id="last_name" placeholder="data"
                         formControlName="data_nascimento" [ngClass]="{'is-invalid': displayMessage.data_nascimento }">
+<<<<<<< HEAD
+                        <span class="text-danger" *ngIf="displayMessage.data_nascimento">
+                          <p [innerHTML]="displayMessage.data_nascimento"></p>
+                        </span>
+=======
                       <span class="text-danger" *ngIf="displayMessage.data_nascimento">
                         <p [innerHTML]="displayMessage.data_nascimento"></p>
                       </span>
+>>>>>>> 0ea2fe50f7358c0539228942fe9d08589835db4b
                     </div>
                   </div>
                 </div>
@@ -84,6 +98,19 @@
               <div class="card-header py-3">
                 <h4>Endereço</h4>
               </div>
+<<<<<<< HEAD
+              
+              <div class="card-body">
+                <div class="row">
+                  
+                  <div class="col">
+                    <div class="mb-3">
+                      <label class="form-label"><strong>CEP</strong></label>
+                      <input class="form-control" id="cep" mask="00000-000" type="text" placeholder="CEP" (blur)="buscarCep($event.target.value)" formControlName="cep" cep [ngClass]="{ 'is-invalid': displayMessage.cep }" />
+                            
+                      <span class="text-danger" *ngIf="displayMessage.cep">
+                        <p [innerHTML]="displayMessage.cep"></p>
+=======
 
               <div class="card-body">
                 <div class="row">
@@ -95,10 +122,54 @@
                         [ngClass]="{'is-invalid': displayMessage.rua }">
                       <span class="text-danger" *ngIf="displayMessage.rua">
                         <p [innerHTML]="displayMessage.rua"></p>
+>>>>>>> 0ea2fe50f7358c0539228942fe9d08589835db4b
                       </span>
                     </div>
                   </div>
 
+<<<<<<< HEAD
+                  
+                  <div class="col">
+                    <div class="mb-3">
+                      <label class="form-label"><strong>Complemento</strong></label>
+                      <input class="form-control" type="text" placeholder="opcional" formControlName="complemento"
+                      [ngClass]="{'is-invalid': displayMessage.complemento }">
+                      <span class="text-danger" *ngIf="displayMessage.complemento">
+                        <p [innerHTML]="displayMessage.complemento"></p>
+                      </span>
+                    </div>
+                  </div>
+                  
+                </div>
+                
+                <div class="row">
+                  
+                  <div class="col">
+                    <div class="mb-3">
+                    <label class="form-label" for="rua"><strong>Rua</strong></label>
+                    <input class="form-control" formControlName="rua" type="text" id="rua" placeholder="rua"
+                    [ngClass]="{'is-invalid': displayMessage.rua }">
+                    <span class="text-danger" *ngIf="displayMessage.rua">
+                      <p [innerHTML]="displayMessage.rua"></p>
+                    </span>
+                  </div>
+                </div>
+                
+                <div class="col">
+                  <div class="mb-3">
+                    <label class="form-label" for="numero"><strong>Número</strong></label>
+                    <input class="form-control" type="numero" id="numero" placeholder="numero@numero.com"
+                      name="numero" formControlName="numero" [ngClass]="{'is-invalid': displayMessage.numero }">
+                      <span class="text-danger" *ngIf="displayMessage.numero">
+                        <p [innerHTML]="displayMessage.numero"></p>
+                      </span>
+                    </div>
+                </div>
+              </div>
+                
+                <div class="row">
+                  
+=======
                   <div class="col">
                     <div class="mb-3">
                       <label class="form-label" for="numero"><strong>Número</strong></label>
@@ -138,6 +209,7 @@
 
                 <div class="row">
 
+>>>>>>> 0ea2fe50f7358c0539228942fe9d08589835db4b
                   <div class="col">
                     <div class="mb-3">
                       <label class="form-label"><strong>Bairro</strong></label>

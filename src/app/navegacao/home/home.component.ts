@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
+import { Observable } from 'rxjs';
 import { Produto } from 'src/app/navegacao/models/Produto';
+import { CarrinhoUtil } from 'src/app/shared/utils/carrinho.util';
 import { environment } from 'src/environments/environment';
 import { NavegacaoService } from '../services/navegacao.service';
 
@@ -10,16 +13,22 @@ import { NavegacaoService } from '../services/navegacao.service';
 })
 export class HomeComponent implements OnInit {
 
-  public produtos: Produto[];
+  produtos: Produto[];
   public UrlImagem: string = environment.imagensurl;
- 
-  constructor(private protudoService: NavegacaoService) {}
+
+  constructor(private readonly toastr: ToastrService,
+    private protudoService: NavegacaoService) {
+
+      this.protudoService.obterProdutos().subscribe(
+
+        produtos => this.produtos = produtos 
+
+      );
+
+     }
 
   ngOnInit(): void {
-    this.protudoService.obterProdutos()
-      .subscribe(
-       produtos=> this.produtos = produtos
-      )
+    
   }
 
-}
+ }
