@@ -9,7 +9,7 @@ import { utilsBr } from 'js-brasil';
 import { GerenciarService } from '../services/gerenciar.service';
 import { Usuario } from '../models/Usuario';
 import { StringUtils } from 'src/app/shared/utils/string-utils';
-import { cepconsulta } from '../models/cepconsulta';
+import { cepconsulta } from 'src/app/acesso/gerenciar/models/CepConsulta';
 
 @Component({
   selector: 'app-perfil',

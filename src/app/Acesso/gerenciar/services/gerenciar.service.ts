@@ -5,7 +5,7 @@ import { catchError, map } from "rxjs/operators";
 import { MudarSenha } from '../models/MudarSenha';
 import { Usuario } from '../models/Usuario';
 import { BaseService } from 'src/app/shared/services/base.service';
-import { cepconsulta } from '../models/cepconsulta';
+import { cepconsulta } from 'src/app/acesso/gerenciar/models/CepConsulta';
 
 @Injectable({
     providedIn: 'root'
