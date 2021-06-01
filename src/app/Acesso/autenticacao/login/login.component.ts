@@ -2,11 +2,7 @@ import { AfterViewInit, Component, ElementRef, OnInit, ViewChildren } from '@ang
 import { FormBuilder, FormControl, FormControlName, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CustomValidators } from 'ngx-custom-validators';
-<<<<<<< HEAD
 import { FormBaseComponent } from 'src/app/shared/base-components/form-base.component';
-=======
-import { FormBaseComponent } from 'src/app/base-components/form-base.component';
->>>>>>> 0ea2fe50f7358c0539228942fe9d08589835db4b
 import { Registrar } from '../models/Registrar';
 import { AutenticaoService } from '../services/autenticacao.service';
 

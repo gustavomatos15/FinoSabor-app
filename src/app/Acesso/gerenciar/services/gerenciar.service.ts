@@ -2,16 +2,10 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { catchError, map } from "rxjs/operators";
-<<<<<<< HEAD
 import { MudarSenha } from '../models/MudarSenha';
 import { Usuario } from '../models/Usuario';
 import { CepConsulta } from '../models/CepConsulta';
 import { BaseService } from 'src/app/shared/services/base.service';
-=======
-import { BaseService } from '../../../services/base.service';
-import { MudarSenha } from '../models/MudarSenha';
-import { Usuario } from '../models/Usuario';
->>>>>>> 0ea2fe50f7358c0539228942fe9d08589835db4b
 
 @Injectable({
     providedIn: 'root'
@@ -45,14 +39,11 @@ export class GerenciarService extends BaseService {
 
         return response;
     }
-<<<<<<< HEAD
 
     consultarCep(cep: string): Observable<CepConsulta> {
         return this.http
             .get<CepConsulta>(`https://viacep.com.br/ws/${cep}/json/`)
             .pipe(catchError(super.serviceError))
     }
-=======
->>>>>>> 0ea2fe50f7358c0539228942fe9d08589835db4b
 
 }

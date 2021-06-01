@@ -14,10 +14,7 @@ import { GerenciarService } from './services/gerenciar.service';
 import { GerenciarAppComponent } from './gerenciar.app.component';
 import { MenuComponent } from './menu/menu.component';
 import { PerfilEnderecoComponent } from './perfil-endereco/perfil-endereco.component';
-<<<<<<< HEAD
 import { NgxMaskModule } from 'ngx-mask';
-=======
->>>>>>> 0ea2fe50f7358c0539228942fe9d08589835db4b
 
 
 
@@ -37,12 +34,9 @@ import { NgxMaskModule } from 'ngx-mask';
     ReactiveFormsModule,
     HttpClientModule,
     CustomFormsModule,
-<<<<<<< HEAD
     NgBrazil,
     TextMaskModule,
     NgxMaskModule.forRoot()
-=======
->>>>>>> 0ea2fe50f7358c0539228942fe9d08589835db4b
   ]
 })
 export class GerenciarModule { }

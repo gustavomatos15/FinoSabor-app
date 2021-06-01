@@ -24,7 +24,8 @@ import { ProdutoModule } from '../produto/produto.module';
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    ProdutoModule
     
   ],
   exports: [
@@ -33,7 +34,8 @@ import { ProdutoModule } from '../produto/produto.module';
     CabecalhoComponent,
     CarregamentoComponent,
     Error404Component,
-    CabecalhoLoginComponent
+    CabecalhoLoginComponent,
+    ProdutoModule
   ]
 })
 export class NavegacaoModule { }

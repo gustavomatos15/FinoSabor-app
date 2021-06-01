@@ -2,10 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { catchError, map } from "rxjs/operators";
-<<<<<<< HEAD
-=======
-import { BaseService } from '../../../services/base.service';
->>>>>>> 0ea2fe50f7358c0539228942fe9d08589835db4b
 import { Registrar } from '../../autenticacao/models/Registrar';
 import { ResetSenha } from '../models/reset-senha';
 import { BaseService } from 'src/app/shared/services/base.service';

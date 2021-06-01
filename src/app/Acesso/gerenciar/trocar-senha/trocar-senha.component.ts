@@ -3,20 +3,12 @@ import { FormBuilder, FormControl, FormControlName, FormGroup, Validators } from
 import { Router } from '@angular/router';
 import { CustomValidators } from 'ngx-custom-validators';
 import { ActivatedRoute } from '@angular/router';
-<<<<<<< HEAD
 import { FormBaseComponent } from 'src/app/shared/base-components/form-base.component';
-=======
-import { FormBaseComponent } from 'src/app/base-components/form-base.component';
->>>>>>> 0ea2fe50f7358c0539228942fe9d08589835db4b
 import { Registrar } from '../../autenticacao/models/Registrar';
 import { ToastrService } from 'ngx-toastr';
 import { MudarSenha } from '../models/MudarSenha';
 import { GerenciarService } from '../services/gerenciar.service';
-<<<<<<< HEAD
 import { matchOtherValidator } from 'src/app/shared/utils/confirm-equal-validator.directive';
-=======
-import { matchOtherValidator } from 'src/app/utils/confirm-equal-validator.directive';
->>>>>>> 0ea2fe50f7358c0539228942fe9d08589835db4b
 
 @Component({
   selector: 'app-trocar-senha',

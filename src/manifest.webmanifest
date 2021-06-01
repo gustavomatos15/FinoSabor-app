@@ -1,11 +1,6 @@
 {
-<<<<<<< HEAD
   "name": "finosabor-app",
   "short_name": "finosabor-app",
-=======
-  "name": "SistemaERP-app",
-  "short_name": "SistemaERP-app",
->>>>>>> 0ea2fe50f7358c0539228942fe9d08589835db4b
   "theme_color": "#1976d2",
   "background_color": "#fafafa",
   "display": "standalone",
