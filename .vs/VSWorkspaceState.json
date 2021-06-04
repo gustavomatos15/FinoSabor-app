@@ -2,8 +2,14 @@
   "ExpandedNodes": [
     "",
     "\\src",
-    "\\src\\app"
+    "\\src\\app",
+    "\\src\\app\\acesso",
+    "\\src\\app\\acesso\\gerenciar",
+    "\\src\\app\\acesso\\gerenciar\\models",
+    "\\src\\app\\acesso\\gerenciar\\perfil",
+    "\\src\\app\\acesso\\gerenciar\\services",
+    "\\src\\app\\produto\\produto-lista"
   ],
-  "SelectedNode": "\\src\\app\\app.module.ts",
+  "SelectedNode": "\\src\\app\\acesso\\gerenciar\\models\\CepConsulta.ts",
   "PreviewInSolutionExplorer": false
 }
