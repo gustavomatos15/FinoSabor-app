@@ -4,8 +4,8 @@ import { Observable } from 'rxjs';
 import { catchError, map } from "rxjs/operators";
 import { MudarSenha } from '../models/MudarSenha';
 import { Usuario } from '../models/Usuario';
+import { CepConsulta } from '../models/CepConsulta';
 import { BaseService } from 'src/app/shared/services/base.service';
-import { cepconsulta } from 'src/app/acesso/gerenciar/models/CepConsulta';
 
 @Injectable({
     providedIn: 'root'
@@ -40,9 +40,9 @@ export class GerenciarService extends BaseService {
         return response;
     }
 
-  consultarCep(cep: string): Observable<cepconsulta> {
+    consultarCep(cep: string): Observable<CepConsulta> {
         return this.http
-          .get<cepconsulta>(`https://viacep.com.br/ws/${cep}/json/`)
+            .get<CepConsulta>(`https://viacep.com.br/ws/${cep}/json/`)
             .pipe(catchError(super.serviceError))
     }
 

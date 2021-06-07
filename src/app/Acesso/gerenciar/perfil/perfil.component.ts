@@ -9,7 +9,8 @@ import { utilsBr } from 'js-brasil';
 import { GerenciarService } from '../services/gerenciar.service';
 import { Usuario } from '../models/Usuario';
 import { StringUtils } from 'src/app/shared/utils/string-utils';
-import { cepconsulta } from 'src/app/acesso/gerenciar/models/CepConsulta';
+import { CepConsulta } from '../models/CepConsulta';
+import { applySourceSpanToExpressionIfNeeded } from '@angular/compiler/src/output/output_ast';
 
 @Component({
   selector: 'app-perfil',
@@ -154,7 +155,7 @@ removedateTime(datetime)
         erro => this.errors.push(erro));
   }
 
-  preencherEnderecoConsulta(cepConsulta: cepconsulta) {
+  preencherEnderecoConsulta(cepConsulta: CepConsulta) {
     if (cepConsulta.logradouro) {
 
       this.usuarioForm.patchValue({

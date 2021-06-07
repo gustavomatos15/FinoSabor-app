@@ -3,13 +3,12 @@
     "",
     "\\src",
     "\\src\\app",
-    "\\src\\app\\acesso",
-    "\\src\\app\\acesso\\gerenciar",
-    "\\src\\app\\acesso\\gerenciar\\models",
-    "\\src\\app\\acesso\\gerenciar\\perfil",
-    "\\src\\app\\acesso\\gerenciar\\services",
-    "\\src\\app\\produto\\produto-lista"
+    "\\src\\app\\navegacao",
+    "\\src\\app\\navegacao\\cabecalho",
+    "\\src\\app\\navegacao\\cabecalho-login",
+    "\\src\\assets",
+    "\\src\\assets\\img"
   ],
-  "SelectedNode": "\\src\\app\\acesso\\gerenciar\\models\\CepConsulta.ts",
+  "SelectedNode": "\\src\\app\\navegacao\\cabecalho-login\\cabecalho-login.component.html",
   "PreviewInSolutionExplorer": false
 }

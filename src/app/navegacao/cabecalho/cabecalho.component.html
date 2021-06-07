@@ -1,37 +1,24 @@
 
+<nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-dark" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="#page-top">Fino&Sabor</a><button data-bs-toggle="collapse" data-bs-target="#navbarResponsive" class="navbar-toggler navbar-toggler-right" type="button" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ms-auto text-uppercase">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-bs-toggle="dropdown" aria-expanded="false">Categorias</a>
+          <ul class="dropdown-menu" aria-labelledby="dropdown04">
+            <li><a *ngFor="let categoria of categorias" class="dropdown-item" [routerLink]="['/produtos/categoria',categoria.slug]">{{categoria.nome}}</a></li>
+          </ul>
+        <li class="nav-item"><a class="nav-link" routerLink="/pedidos/carrinho"  routerLinkActive="active" href="#portfolio">Carrinho</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="/contato" routerLinkActive="active" href="#contact">Contato</a></li>
 
-<!-- <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top py-3 box-shadow">
-  <a routerLink="" class="navbar-brand">
-    <img src="img/Trivago.png" alt="Fino&Sabor">
-    Fino&Sabor
-  </a>
-  
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Abrir Navegação">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav ml-auto">
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categorias</a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a *ngFor= "let categoria of categorias"  class="dropdown-item" [routerLink]="['/produtos/categoria',categoria.slug]">{{categoria.nome}}</a>
-        </div>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/pedidos/carrinho" routerLinkActive="active">Carrinho</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/contato" routerLinkActive="active">Contato</a>
-      </li>
-      <app-cabecalho-login></app-cabecalho-login>
-      
-    </ul>
+      </ul>
+        <app-cabecalho-login></app-cabecalho-login>
+
+    </div>
   </div>
-</nav> -->
-
-
-<nav class="navbar navbar-expand-md navbar-light bg-light" aria-label="Fourth navbar example">
+</nav>
+<!-- <nav class="navbar navbar-expand-md navbar-light bg-light" aria-label="Fourth navbar example">
   <div class="container-fluid">
     <a class="navbar-brand" routerLink="">Fino&Sabor</a>
     <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
@@ -54,53 +41,9 @@
         </li>
       </ul>
       <app-cabecalho-login></app-cabecalho-login>
-      <!-- <form>
+      <form>
         <input class="form-control" type="text" placeholder="Buscar" aria-label="Search">
       </form> -->
-    </div>
+<!-- </div>
   </div>
-</nav>
-
-
-
-<!-- <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-orange">
-  <a class="navbar-brand" href="#void" routerLink=""> Fino&Sabor</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" routerLink=""><i class="fas fa-home"></i> Home <span class="sr-only">(current)</span></a>
-      </li>
-      <div class="dropdown">
-        <a class="nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-           aria-haspopup="true" aria-expanded="false">
-          <i class="fas fa-list-ul"></i> Categorias
-        </a>
-        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li *ngFor= "let categoria of categorias">
-              <a class="dropdown-item" href="#void" [routerLink]="['/produtos/categoria',categoria.slug]">{{categoria.nome}}</a>
-            </li>
-          </ul>
-       
-      </div>
-      <li class="nav-item ">
-        <a class="nav-link" routerLink="/contato"><i class="far fa-address-book"></i> Contato </a>
-      </li>
-    </ul>
-    <form class="form-inline my-2 my-lg-0" method="get">
-      <input class="form-control mr-sm-2" type="search" name="pesquisa" value="" placeholder="palavra" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisa</button>
-      
-      <a class="nav-link" href="#void" routerLink="/pedidos/carrinho"><i class="fas fa-shopping-cart"></i> Carrinho</a>
-      
-      <app-cabecalho-login></app-cabecalho-login>
-      
-
-    </form>
-  </div>
-</nav> -->
+</nav>  -->

@@ -1,7 +1,10 @@
-p{
-    margin-top: 0px;
+.container{
+    margin-top: 10px;
 }
-#home-quote {
-    background: url('../../../assets/img/7.jpg') center center;
-    background-size: cover;
-  }
+/* .produto{
+    background-color: #f05f40 !important;
+} */
+
+.cor{
+    color:#e67e22;
+}
