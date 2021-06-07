@@ -1,4 +1,4 @@
-export class CepConsulta {
+export class cepconsulta {
     cep: string;
     logradouro: string;
     complemento: string;
