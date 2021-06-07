@@ -1,22 +1,21 @@
-
 <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-dark" id="mainNav">
-  <div class="container">
-    <a class="navbar-brand" href="#page-top">Fino&Sabor</a><button data-bs-toggle="collapse" data-bs-target="#navbarResponsive" class="navbar-toggler navbar-toggler-right" type="button" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
-    <div class="collapse navbar-collapse" id="navbarResponsive">
-      <ul class="navbar-nav ms-auto text-uppercase">
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-bs-toggle="dropdown" aria-expanded="false">Categorias</a>
-          <ul class="dropdown-menu" aria-labelledby="dropdown04">
-            <li><a *ngFor="let categoria of categorias" class="dropdown-item" [routerLink]="['/produtos/categoria',categoria.slug]">{{categoria.nome}}</a></li>
-          </ul>
-        <li class="nav-item"><a class="nav-link" routerLink="/pedidos/carrinho"  routerLinkActive="active" href="#portfolio">Carrinho</a></li>
-        <li class="nav-item"><a class="nav-link" routerLink="/contato" routerLinkActive="active" href="#contact">Contato</a></li>
+    <div class="container">
+        <a class="navbar-brand" href="#page-top">Fino&Sabor</a><button data-bs-toggle="collapse" data-bs-target="#navbarResponsive" class="navbar-toggler navbar-toggler-right" type="button" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ms-auto text-uppercase">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-bs-toggle="dropdown" aria-expanded="false">Categorias</a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdown04">
+                        <li><a *ngFor="let categoria of categorias" class="dropdown-item" [routerLink]="['/produtos/categoria',categoria.slug]">{{categoria.nome}}</a></li>
+                    </ul>
+                    <li class="nav-item"><a class="nav-link" routerLink="/pedidos/carrinho" routerLinkActive="active" href="#portfolio">Carrinho</a></li>
+                    <li class="nav-item"><a class="nav-link" routerLink="/contato" routerLinkActive="active" href="#contact">Contato</a></li>
 
-      </ul>
-        <app-cabecalho-login></app-cabecalho-login>
+            </ul>
+            <app-cabecalho-login></app-cabecalho-login>
 
+        </div>
     </div>
-  </div>
 </nav>
 <!-- <nav class="navbar navbar-expand-md navbar-light bg-light" aria-label="Fourth navbar example">
   <div class="container-fluid">

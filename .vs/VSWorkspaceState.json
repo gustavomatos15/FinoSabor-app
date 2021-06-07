@@ -9,6 +9,6 @@
     "\\src\\assets",
     "\\src\\assets\\img"
   ],
-  "SelectedNode": "\\src\\app\\navegacao\\cabecalho-login\\cabecalho-login.component.html",
+  "SelectedNode": "\\src\\app\\app-routing.module.ts",
   "PreviewInSolutionExplorer": false
 }
