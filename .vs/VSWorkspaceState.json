@@ -3,12 +3,11 @@
     "",
     "\\src",
     "\\src\\app",
-    "\\src\\app\\navegacao",
+    "\\src\\app\\Acesso",
     "\\src\\app\\navegacao\\cabecalho",
     "\\src\\app\\navegacao\\cabecalho-login",
-    "\\src\\assets",
     "\\src\\assets\\img"
   ],
-  "SelectedNode": "\\src\\app\\app-routing.module.ts",
+  "SelectedNode": "\\src\\app\\Acesso",
   "PreviewInSolutionExplorer": false
 }

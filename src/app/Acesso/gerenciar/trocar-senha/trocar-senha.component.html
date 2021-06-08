@@ -1,0 +1,178 @@
+<div class="container">
+    <main role="main" class="pb-3">
+
+        <br>
+        <br>
+        <h2>Gerencie sua conta</h2>
+
+        <div>
+            <h4>Altere as configurações da sua conta</h4>
+            <hr>
+            <div class="row">
+                <div class="col-md-3">
+
+                    <app-menu></app-menu>
+
+                </div>
+                <div class="col-md-9">
+
+
+
+
+
+                    <form novalidate [formGroup]="mudarSenhaForm">
+                        <div class="card shadow mb-3">
+                            <div class="card-header py-3">
+                                <h4>Trocar Senha</h4>
+                            </div>
+                            <div class="card-body">
+
+                                <div class="col">
+                                    <div class="mb-3">
+                                        <label class="form-label"><strong>Senha Atual</strong></label>
+                                        <input class="form-control" type="password" placeholder="Digite a sua senha atual" formControlName="password" [ngClass]="{'is-invalid': displayMessage.password }">
+                                        <span class="text-danger" *ngIf="displayMessage.password">
+                <p [innerHTML]="displayMessage.password"></p>
+              </span>
+                                    </div>
+                                </div>
+
+                                <div class="col">
+                                    <div class="mb-3">
+                                        <label class="form-label"><strong>Nova Senha</strong></label>
+                                        <input class="form-control" type="password" placeholder="Digite a sua nova senha" formControlName="novaSenha" [ngClass]="{'is-invalid': displayMessage.novaSenha }">
+                                        <span class="text-danger" *ngIf="displayMessage.novaSenha">
+                <p [innerHTML]="displayMessage.novaSenha"></p>
+              </span>
+                                    </div>
+                                </div>
+
+                                <div class="col">
+                                    <div class="mb-3">
+                                        <label class="form-label"><strong>Confirmação de Senha</strong></label>
+                                        <input class="form-control" type="password" placeholder="Confirme a sua senha" formControlName="novaSenhaConfirm" [ngClass]="{'is-invalid': displayMessage.novaSenhaConfirm }">
+                                        <span class="text-danger" *ngIf="displayMessage.novaSenhaConfirm">
+                <p [innerHTML]="displayMessage.novaSenhaConfirm"></p>
+              </span>
+                                    </div>
+                                </div>
+
+
+                                <br>
+                                <button type="submit" class="btn btn-primary" style="background-color: #e67e22;
+                            border-color: #e67e22;" [disabled]="!mudarSenhaForm.valid" value="Cadastrar" (click)="MudarSenha()">Mudar Senha</button>
+
+
+
+                                <div class="alert alert-danger" *ngIf="errors.length > 0">
+                                    <h3 id="msgRetorno">Opa! Alguma coisa não deu certo:</h3>
+                                    <ul>
+                                        <li *ngFor="let error of errors">{{ error }}</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+
+                    <div class="alert alert-danger" *ngIf="errors.length > 0">
+                        <h3 id="msgRetorno">Opa! Alguma coisa não deu certo:</h3>
+                        <ul>
+                            <li *ngFor="let error of errors">{{ error }}</li>
+                        </ul>
+                    </div>
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+
+
+<!-- <div class="container">
+    <main role="main" class="pb-3">
+
+        <br>
+        <br>
+        <h2>Gerencie sua conta</h2>
+
+        <div>
+            <h4>Altere as configurações da sua conta</h4>
+            <hr>
+            <div class="row">
+                <div class="col-md-3">
+                    <app-menu></app-menu>
+
+                </div>
+                <div class="col-md-9">
+
+
+                    <div class="row">
+
+                        <form novalidate [formGroup]="mudarSenhaForm">
+                            <div class="card shadow mb-3">
+                                <div class="card-header py-3">
+                                    <h4>Trocar Senha</h4>
+                                </div>
+                                <div class="card-body">
+
+                                    <div class="col">
+                                        <div class="mb-3">
+                                            <label class="form-label"><strong>Senha Atual</strong></label>
+                                            <input class="form-control" type="password" placeholder="Digite a sua senha atual" formControlName="password" [ngClass]="{'is-invalid': displayMessage.password }">
+                                            <span class="text-danger" *ngIf="displayMessage.password">
+                        <p [innerHTML]="displayMessage.password"></p>
+                      </span>
+                                        </div>
+                                    </div>
+
+                                    <div class="col">
+                                        <div class="mb-3">
+                                            <label class="form-label"><strong>Nova Senha</strong></label>
+                                            <input class="form-control" type="password" placeholder="Digite a sua nova senha" formControlName="novaSenha" [ngClass]="{'is-invalid': displayMessage.novaSenha }">
+                                            <span class="text-danger" *ngIf="displayMessage.novaSenha">
+                        <p [innerHTML]="displayMessage.novaSenha"></p>
+                      </span>
+                                        </div>
+                                    </div>
+
+                                    <div class="col">
+                                        <div class="mb-3">
+                                            <label class="form-label"><strong>Confirmação de Senha</strong></label>
+                                            <input class="form-control" type="password" placeholder="Confirme a sua senha" formControlName="novaSenhaConfirm" [ngClass]="{'is-invalid': displayMessage.novaSenhaConfirm }">
+                                            <span class="text-danger" *ngIf="displayMessage.novaSenhaConfirm">
+                        <p [innerHTML]="displayMessage.novaSenhaConfirm"></p>
+                      </span>
+                                        </div>
+                                    </div>
+
+
+                                    <br>
+                                    <button type="submit" class="btn btn-primary" style="background-color: #e67e22;
+                                    border-color: #e67e22;" [disabled]="!mudarSenhaForm.valid" value="Cadastrar" (click)="MudarSenha()">Mudar Senha</button>
+
+
+
+                                    <div class="alert alert-danger" *ngIf="errors.length > 0">
+                                        <h3 id="msgRetorno">Opa! Alguma coisa não deu certo:</h3>
+                                        <ul>
+                                            <li *ngFor="let error of errors">{{ error }}</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+
+    </main>
+</div> -->
