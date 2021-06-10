@@ -1,10 +1,16 @@
-.container{
+.container {
     margin-top: 10px;
 }
+
+
 /* .produto{
     background-color: #f05f40 !important;
 } */
 
-.cor{
-    color:#e67e22;
+.cor {
+    color: #e67e22;
+}
+
+.clean-block {
+    margin-top: 50px;
 }

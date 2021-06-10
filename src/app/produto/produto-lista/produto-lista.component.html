@@ -1,29 +1,19 @@
-         
-         <div class="uk-card uk-card-default">
-                <div class="uk-card-media-top uk-text-center">
-                    <a href="#void" [routerLink]="['/produtos/detalhes',produto.slug]">
-                  <img
-                    src="{{UrlImagem+produto.imagem_principal}}"
-                    height="150"
-                    width="150"
-                    class="uk-margin-small-top uk-border-circle"
-                    alt=""
-                  />
-                </a>
-                </div>
-                <div class="uk-card-body">
-                    <div style="cursor:pointer" [routerLink]="['/produtos/detalhes',produto.slug]">
-                  <h3 class="uk-card-title">{{ produto.valor | currency: 'BRL' }}</h3>
-                  <p style="height: 50px;">
-                    {{ produto.nome }}
-                  </p>
-                </div>
-                  <button
-                    class="uk-button uk-button-default uk-button-large uk-width-1-1"
-                    (click)="addToCarrinho()">
+<div class="uk-card uk-card-default">
+    <div class="uk-card-media-top uk-text-center">
+        <a href="#void" [routerLink]="['/produtos/detalhes',produto.slug]">
+            <img src="{{UrlImagem+produto.imagem_principal}}" height="150" width="150" class="uk-margin-small-top uk-border-circle" alt="" />
+        </a>
+    </div>
+    <div class="uk-card-body">
+        <div style="cursor:pointer" [routerLink]="['/produtos/detalhes',produto.slug]">
+            <h3 class="uk-card-title">{{ produto.valor | currency: 'BRL' }}</h3>
+            <p style="height: 50px;">
+                {{ produto.nome }}
+            </p>
+        </div>
+        <button class="btn uk-button uk-button-default uk-button-large uk-width-1-1" (click)="addToCarrinho()">
                     <span class="uk-icon uk-margin-small-right" uk-icon="icon: cart"></span>
                     Adicionar
                   </button>
-                </div>
-              </div>
-              
+    </div>
+</div>
