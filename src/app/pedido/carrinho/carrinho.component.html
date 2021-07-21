@@ -1,46 +1,28 @@
-<div class="card">
-    <div class="row">
-        <div class="col-md-8 cart">
-            <div class="title">
-                <div class="row">
-                    <div class="col">
-                        <h4><b>Carrinho</b></h4>
-                    </div>
-                    <div class="col align-self-center text-right text-muted">3 items</div>
+<div class="container mt-5 mb-5">
+    <div class="d-flex justify-content-center row">
+        <div class="col-md-8">
+            <div class="p-2">
+                <h4>Carrinho</h4>
+            </div>
+            <div *ngFor="let item of carrinho.itens" class="d-flex flex-row justify-content-between align-items-center p-2 bg-white mt-4 px-3 rounded">
+                <div class="mr-1"><img class="rounded" src="{{UrlImagem+item.imagem_principal}}" width="70"></div>
+                <div class="d-flex flex-column align-items-center product-details"><span class="font-weight-bold">{{item.nome}}</span>
+                    <!-- <div class="d-flex flex-row product-desc">
+                        <div class="size mr-1"><span class="text-grey">Size:</span><span class="font-weight-bold">&nbsp;M</span></div>
+                        <div class="color"><span class="text-grey">Color:</span><span class="font-weight-bold">&nbsp;Grey</span></div>
+                    </div> -->
                 </div>
-            </div>
-            <div *ngFor= "let item of carrinho.itens" class="row border-top">
-                <div class="row main align-items-center">
-                    <div class="col-2"><img class="img-fluid" src="https://i.imgur.com/1GrakTl.jpg"></div>
-                    <div class="col">
-                        <div class="row">{{item.nome}}</div>
-                    </div>
-                    <div class="col"> <a href="#">-</a><a href="#" class="border">1</a><a href="#">+</a> </div>
-                    <div class="col">&euro; 44.00 <span class="close">&#10005;</span></div>
+                <div class="d-flex flex-row align-items-center qty"><i class="fa fa-minus text-danger"></i>
+                    <h5 class="text-grey mt-1 mr-1 ml-1">{{item.quantidade}}</h5><i class="fa fa-plus text-success"></i>
                 </div>
+                <div>
+                    <h5 class="text-grey">{{item.preco | currency:"BRL":"symbol"}}</h5>
+                </div>
+                <div class="d-flex align-items-center"><i class="fa fa-trash mb-1 text-danger"></i></div>
             </div>
-            
-            <div class="back-to-shop"><a href="#"></a><span class="text-muted">Back to shop</span></div>
-        </div>
-        <div class="col-md-4 summary">
-            <div>
-                <h5><b>Summary</b></h5>
-            </div>
-            <hr>
-            <div class="row">
-                <div class="col" style="padding-left:0;">ITEMS 3</div>
-                <div class="col text-right">&euro; 132.00</div>
-            </div>
-            <form>
-                <p>SHIPPING</p> <select>
-                    <option class="text-muted">Standard-Delivery- &euro;5.00</option>
-                </select>
-                <p>GIVE CODE</p> <input id="code" placeholder="Enter your code">
-            </form>
-            <div class="row" style="border-top: 1px solid rgba(0,0,0,.1); padding: 2vh 0;">
-                <div class="col">TOTAL PRICE</div>
-                <div class="col text-right">&euro; 137.00</div>
-            </div> <button class="btn">CHECKOUT</button>
+
+            <!-- <div class="d-flex flex-row align-items-center mt-3 p-2 bg-white rounded"><input type="text" class="form-control border-0 gift-card" placeholder="discount code/gift card"><button class="btn btn-outline-warning btn-sm ml-2" type="button">Apply</button></div> -->
+            <div class="d-flex flex-row align-items-center mt-3 p-2 bg-white rounded"><button class="btn btn-warning btn-block btn-lg ml-2 pay-button" type="button">Comprar</button></div>
         </div>
     </div>
 </div>

@@ -1,74 +1,8 @@
-.uk-card-default {
-    background: #fff;
-    color: #666;
-    box-shadow: 0 2px 8px rgb(0 0 0 / 8%);
-}
-
 .uk-card {
-    position: relative;
-    box-sizing: border-box;
-    transition: box-shadow .1s ease-in-out;
+    border: 1px solid #e8e6e6;
 }
 
-div {
-    display: block;
-}
-
-.row {
-    --bs-gutter-x: 1.5rem;
-    --bs-gutter-y: 0;
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: calc(var(--bs-gutter-y) * -1);
-    margin-right: calc(var(--bs-gutter-x)/ -2);
-    margin-left: calc(var(--bs-gutter-x)/ -2);
-}
-
-body {
-    margin: 0;
-    font-family: var(--bs-font-sans-serif);
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5;
-    color: #212529;
-    background-color: #fff;
-    -webkit-text-size-adjust: 100%;
-    -webkit-tap-highlight-color: transparent;
-}
-
- ::selection {
-    background: #39f;
-    color: #fff;
-    text-shadow: none;
-}
-
-.uk-text-center {
-    text-align: center !important;
-}
-
-.uk-link,
-a {
-    color: #8726d3;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-a {
-    color: #0d6efd;
-    text-decoration: underline;
-}
-
-.uk-card-body {
-    padding: 30px 30px;
-}
-
-button,
-input,
-optgroup,
-select,
-textarea {
-    margin: 0;
-    font-family: inherit;
-    font-size: inherit;
-    line-height: inherit;
+.add {
+    background-color: #e67e22;
+    color: white;
 }

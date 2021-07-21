@@ -3,10 +3,7 @@
     "",
     "\\src",
     "\\src\\app",
-    "\\src\\app\\Acesso",
-    "\\src\\app\\navegacao\\cabecalho",
-    "\\src\\app\\navegacao\\cabecalho-login",
-    "\\src\\assets\\img"
+    "\\src\\app\\Acesso"
   ],
   "SelectedNode": "\\src\\app\\Acesso",
   "PreviewInSolutionExplorer": false
