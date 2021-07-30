@@ -14,3 +14,12 @@
 .clean-block {
     margin-top: 50px;
 }
+
+.produto,
+.container {
+    margin-top: 0px;
+}
+
+.clean-gallery {
+    padding-bottom: 0px;
+}
