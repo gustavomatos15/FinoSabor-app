@@ -44,3 +44,7 @@ body {
 .qty i {
     font-size: 11px
 }
+
+.container {
+    padding-bottom: 205px;
+}

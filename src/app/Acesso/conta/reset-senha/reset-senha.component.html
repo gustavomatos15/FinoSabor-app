@@ -1,38 +1,52 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-9 col-lg-12 col-xl-10">
+            <div class="card shadow-lg o-hidden border-0 my-5">
+                <div class="card-body p-0">
+                    <div class="row">
+                        <div class="col-lg-6 d-none d-lg-flex">
+                            <div class="flex-grow-1 bg-login-image" style="background-image: url(&quot;../../../../assets/img/MockupPlaca.jpg&quot;); background-size: cover;">
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="p-5">
+                                <div class="text-center">
+                                    <h4 class="text-dark mb-4">Troque a sua senha</h4>
+                                </div>
+                                <form class="user" [formGroup]="resetForm">
+                                    <div class="mb-3">
+                                        <input [(ngModel)]="this.resetSenha.password" type="password" class="form-control" id="senha" name="password" placeholder="Digite a sua senha" minlength="8" required formControlName="senha">
+                                        <span class="text-danger" *ngIf="resetForm.get('senha').errors &&  resetForm.get('senha').touched">
+                                            <p [innerHTML]="displayMessage.senha"></p>
+                                        </span>
+                                    </div>
+                                    <div class="mb-3">
+                                        <input type="password" class="form-control" id="senhaConfirm" name="password" placeholder="Confirme a sua senha" minlength="8" required formControlName="senhaConfirm">
+                                        <span class="text-danger" *ngIf="resetForm.get('senhaConfirm').errors &&  resetForm.get('senhaConfirm').touched">
+                                            <p [innerHTML]="displayMessage.senhaConfirm"></p>
+                                        </span>
+                                    </div>
 
-<div class = "container" novalidate [formGroup]="resetForm" >
-    <h1 id="titulo">Trocar senha</h1>
+                                    <div class="mb-3">
 
+                                        <div class="alert alert-danger" *ngIf="errors.length > 0">
+                                            <h3 id="msgRetorno">Opa! Alguma coisa não deu certo:</h3>
+                                            <ul>
+                                                <li *ngFor="let error of errors">{{ error }}</li>
+                                            </ul>
+                                        </div>
 
-    <div class="txt">
-        <label for="pass">Senha:</label>
-        <input class="form-control" type="password" id="senha" name="password" placeholder= " Digite a sua senha"
-            minlength="8" required formControlName="senha">
-            <span class="text-danger" *ngIf="resetForm.get('senha').errors &&  resetForm.get('senha').touched">
-                <p [innerHTML]="displayMessage.senha"></p>
-            </span>
-        
-    </div><!-- --><!-- txt -->
-
-    <br>
-
-    <div class="txt">
-        <label for="pass">Confirmação de Senha:</label>
-        <input [(ngModel)]="this.resetSenha.password" class="form-control" type="password" id="pass" name="senhaConfirm" placeholder= " Confirme a sua senha"
-            minlength="8" required formControlName="senhaConfirm">
-            <span class="text-danger" *ngIf="resetForm.get('senhaConfirm').errors &&  resetForm.get('senhaConfirm').touched">
-                <p [innerHTML]="displayMessage.senhaConfirm"></p>
-            </span>  
+                                    </div><button class="btn btn-primary d-block btn-user w-100" style="background-color: #e67e22;
+                                    border-color: #e67e22;" [disabled]="!resetForm.valid" value="Cadastrar" (click)="mudarSenha()">Mudar Senha:</button>
+                                    <hr>
+                                </form>
+                                <div class="text-center"><a class="small" href="javascript:void(0)" style="color: #e67e22;
+                                    border-color: #e67e22;" routerLink="/login">Faça login</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <br>
-    <button type="submit" class="btn btn-primary" [disabled]="!resetForm.valid" value="Cadastrar" (click)="mudarSenha()">Mudar Senha</button>
-
-    
-
-    <div class="alert alert-danger" *ngIf="errors.length > 0">
-        <h3 id="msgRetorno">Opa! Alguma coisa não deu certo:</h3>
-        <ul>
-            <li *ngFor="let error of errors">{{ error }}</li>
-        </ul>
-    </div>
-    
 </div>

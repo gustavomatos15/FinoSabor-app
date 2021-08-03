@@ -15,14 +15,13 @@
                                 </div>
                                 <form class="user" [formGroup]="loginForm">
                                     <div class="mb-3">
-                                        <input type="text" class="form-control" name="email" id="email" placeholder= "Digite seu e-mail" formControlName="email" [ngClass]="{'is-invalid': loginForm.get('email').errors &&  loginForm.get('email').touched }">
+                                        <input type="text" class="form-control" name="email" id="email" placeholder="Digite seu e-mail" formControlName="email" [ngClass]="{'is-invalid': loginForm.get('email').errors &&  loginForm.get('email').touched }">
                                         <span class="text-danger" *ngIf="loginForm.get('email').errors &&  loginForm.get('email').touched">
                                             <p [innerHTML]="displayMessage.email"></p>
                                         </span>
                                     </div>
                                     <div class="mb-3">
-                                        <input type="password" class="form-control" id="senha" name="password" placeholder= "Digite a sua senha"
-                                        minlength="8" required formControlName="senha">
+                                        <input type="password" class="form-control" id="senha" name="password" placeholder="Digite a sua senha" minlength="8" required formControlName="senha">
                                         <span class="text-danger" *ngIf="loginForm.get('senha').errors &&  loginForm.get('senha').touched">
                                             <p [innerHTML]="displayMessage.senha"></p>
                                         </span>
@@ -35,12 +34,15 @@
                                                 <li *ngFor="let error of errors">{{ error }}</li>
                                             </ul>
                                         </div>
-                                    
-                                    </div><button class="btn btn-primary d-block btn-user w-100" [disabled]="!loginForm.valid" value="login" (click)="login()" type="submit">Login</button>
+
+                                    </div><button class="btn btn-primary d-block btn-user w-100" style="background-color: #e67e22;
+                                    border-color: #e67e22;" [disabled]="!loginForm.valid" value="login" (click)="login()" type="submit">Login</button>
                                     <hr>
                                 </form>
-                                <div class="text-center"><a class="small" href="javascript:void(0)" routerLink="/conta/esqueceu-senha">Esqueceu sua senha?</a></div>
-                                <div class="text-center"><a class="small" href="javascript:void(0)" routerLink="/registrar">Criei uma nova conta!</a></div>
+                                <div class="text-center"><a class="small" href="javascript:void(0)" style="color: #e67e22;
+                                    border-color: #e67e22;" routerLink="/conta/esqueceu-senha">Esqueceu sua senha?</a></div>
+                                <div class="text-center"><a class="small" href="javascript:void(0)" style="color: #e67e22;
+                                    border-color: #e67e22;" routerLink="/registrar">Criei uma nova conta!</a></div>
                             </div>
                         </div>
                     </div>
@@ -49,4 +51,3 @@
         </div>
     </div>
 </div>
-  

@@ -50,11 +50,14 @@
                                             </ul>
                                         </div>
 
-                                    </div><button class="btn btn-primary d-block btn-user w-100" [disabled]="!cadastroForm.valid" value="login" (click)="adicionarConta()">Registrar</button>
+                                    </div><button class="btn btn-primary d-block btn-user w-100" style="background-color: #e67e22;
+                                    border-color: #e67e22;" [disabled]="!cadastroForm.valid" value="login" (click)="adicionarConta()">Registrar</button>
                                     <hr>
                                 </form>
-                                <div class="text-center"><a class="small" href="javascript:void(0)" routerLink="/conta/esqueceu-senha">Esqueceu sua senha?</a></div>
-                                <div class="text-center"><a class="small" href="javascript:void(0)" routerLink="/login">Faça login em vez disso</a></div>
+                                <div class="text-center"><a class="small" href="javascript:void(0)" style="color: #e67e22;
+                                    border-color: #e67e22;" routerLink="/conta/esqueceu-senha">Esqueceu sua senha?</a></div>
+                                <div class="text-center"><a class="small" href="javascript:void(0)" style="color: #e67e22;
+                                    border-color: #e67e22;" routerLink="/login">Faça login em vez disso</a></div>
                             </div>
                         </div>
                     </div>
@@ -63,53 +66,3 @@
         </div>
     </div>
 </div>
-
-<!-- 
-
-<div class="container" novalidate [formGroup]="cadastroForm">
-    <h1 id="titulo">Cadastro</h1>
-
-
-    <div class="txt">
-        <label for="nome">Nome:</label>
-        <input type="text" class="form-control" name="nome" id="nome" placeholder=" Digite seu nome" formControlName="nome">
-        <span class="text-danger" *ngIf="cadastroForm.get('nome').errors &&  cadastroForm.get('nome').touched">
-            <p [innerHTML]="displayMessage.nome"></p>
-        </span>
-    </div>
-
-<div class="txt">
-    <label for="email">E-mail:</label>
-    <input type="text" class="form-control" name="email" id="email" placeholder=" Digite seu e-mail" formControlName="email" [ngClass]="{'is-invalid': cadastroForm.get('email').errors &&  cadastroForm.get('email').touched }">
-    <span class="text-danger" *ngIf="cadastroForm.get('email').errors &&  cadastroForm.get('email').touched">
-            <p [innerHTML]="displayMessage.email"></p>
-        </span>
-</div>
-
-<div class="txt">
-    <label for="pass">Senha:</label>
-    <input type="password" class="form-control" id="senha" name="password" placeholder=" Digite a sua senha" minlength="8" required formControlName="senha">
-    <span class="text-danger" *ngIf="cadastroForm.get('senha').errors &&  cadastroForm.get('senha').touched">
-                <p [innerHTML]="displayMessage.senha"></p>
-            </span>
-
-</div>
-
-<div class="txt">
-    <label for="pass">Confirmação de Senha:</label>
-    <input type="password" class="form-control" id="pass" name="senhaConfirm" placeholder=" Confirme a sua senha" minlength="8" required formControlName="senhaConfirm">
-    <span class="text-danger" *ngIf="cadastroForm.get('senhaConfirm').errors &&  cadastroForm.get('senhaConfirm').touched">
-                <p [innerHTML]="displayMessage.senhaConfirm"></p>
-            </span>
-</div>
-
-<button type="submit" class="btn btn-primary" [disabled]="!cadastroForm.valid" value="Cadastrar" (click)="adicionarConta()">Registrar</button>
-
-<div class="alert alert-danger" *ngIf="errors.length > 0">
-    <h3 id="msgRetorno">Opa! Alguma coisa não deu certo:</h3>
-    <ul>
-        <li *ngFor="let error of errors">{{ error }}</li>
-    </ul>
-</div>
-
-</div> -->

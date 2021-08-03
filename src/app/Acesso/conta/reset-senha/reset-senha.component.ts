@@ -83,7 +83,7 @@ export class ResetSenhaComponent extends FormBaseComponent implements OnInit, Af
     this.resetForm.reset();
     this.errors = [];
 
-    let toast = this.toastr.success('Senha alterada com Sucesso!, faça o login no sistema', 'Sucesso');
+    let toast = this.toastr.success('Senha alterada com Sucesso! Faça o login no sistema', 'Sucesso');
     if (toast) {
       toast.onHidden.subscribe(() => {
         this.router.navigate(['/login']);

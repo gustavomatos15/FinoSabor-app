@@ -99,7 +99,7 @@
                                     <div class="col">
                                         <div class="mb-3">
                                             <label class="form-label"><strong>Complemento</strong></label>
-                                            <input class="form-control" type="text" placeholder="opcional" formControlName="complemento" [ngClass]="{'is-invalid': displayMessage.complemento }">
+                                            <input class="form-control" type="text" placeholder="Opcional" formControlName="complemento" [ngClass]="{'is-invalid': displayMessage.complemento }">
                                             <span class="text-danger" *ngIf="displayMessage.complemento">
                         <p [innerHTML]="displayMessage.complemento"></p>
                       </span>
@@ -113,7 +113,7 @@
                                     <div class="col">
                                         <div class="mb-3">
                                             <label class="form-label" for="rua"><strong>Rua</strong></label>
-                                            <input class="form-control" formControlName="rua" type="text" id="rua" placeholder="rua" [ngClass]="{'is-invalid': displayMessage.rua }">
+                                            <input class="form-control" formControlName="rua" type="text" id="rua" placeholder="Rua" [ngClass]="{'is-invalid': displayMessage.rua }">
                                             <span class="text-danger" *ngIf="displayMessage.rua">
                         <p [innerHTML]="displayMessage.rua"></p>
                       </span>
@@ -123,7 +123,7 @@
                                     <div class="col">
                                         <div class="mb-3">
                                             <label class="form-label" for="numero"><strong>Número</strong></label>
-                                            <input class="form-control" type="numero" id="numero" placeholder="numero@numero.com" name="numero" formControlName="numero" [ngClass]="{'is-invalid': displayMessage.numero }">
+                                            <input class="form-control" type="number" id="numero" placeholder="123" name="numero" formControlName="numero" [ngClass]="{'is-invalid': displayMessage.numero }">
                                             <span class="text-danger" *ngIf="displayMessage.numero">
                         <p [innerHTML]="displayMessage.numero"></p>
                       </span>
@@ -136,7 +136,7 @@
                                     <div class="col">
                                         <div class="mb-3">
                                             <label class="form-label"><strong>Bairro</strong></label>
-                                            <input class="form-control" type="text" placeholder="bairro" formControlName="bairro" [ngClass]="{'is-invalid': displayMessage.bairro }">
+                                            <input class="form-control" type="text" placeholder="Bairro" formControlName="bairro" [ngClass]="{'is-invalid': displayMessage.bairro }">
                                             <span class="text-danger" *ngIf="displayMessage.bairro">
                         <p [innerHTML]="displayMessage.bairro"></p>
                       </span>

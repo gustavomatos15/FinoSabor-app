@@ -4,7 +4,11 @@
         <a class="nav-link" routerLink="/login" routerLinkActive="active" href="#contact">LOGIN</a>
     </li>
     <li *ngSwitchCase="false" class="nav-item">
-        <a class="btn btn-outline-primary" routerLink="/registrar" routerLinkActive="active">INSCREVA-SE</a>
+
+        <button type="submit" class="btn btn-primary" routerLink="/registrar" routerLinkActive="active" style="background-color: #e67e22;
+        border-color: #e67e22;">INSCREVA-SE</button>
+
+
     </li>
 
     <li *ngSwitchCase="true" class="nav-item dropdown no-arrow">
