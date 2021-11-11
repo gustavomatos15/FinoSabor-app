@@ -3,8 +3,9 @@
     "",
     "\\src",
     "\\src\\app",
-    "\\src\\app\\Acesso"
+    "\\src\\app\\Acesso",
+    "\\src\\app\\Acesso\\gerenciar",
+    "\\src\\app\\Acesso\\gerenciar\\perfil"
   ],
-  "SelectedNode": "\\src\\app\\Acesso",
   "PreviewInSolutionExplorer": false
 }
