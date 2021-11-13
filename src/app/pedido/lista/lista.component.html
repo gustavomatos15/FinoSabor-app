@@ -5,11 +5,11 @@
         <h5 class="mb-1">Data: {{this.ToDateTime(pedido.data_pedido)}}</h5>
         <small></small>
       </div>
-      <p class="mb-1">Status: {{pedido.status == 0 ? "Em andamento" : pedido.status == 1 ? "Processando" : pedido.status == 2 ? "Cancelado" : pedido.status == 3 ? "Enviado" : "Entregue"}}</p>
-      <p class="mb-1">Forma de Pagamento: {{pedido.forma_pagamento == 0 ? "Cartão de credito" : pedido.forma_pagamento == 1 ? "Cartão de debito" : pedido.forma_pagamento == 2 ? "Dinheiro" : "Pix"}}</p>
-            <small>Total: {{pedido.total}}</small>
+      <p class="mb-1">Status: {{pedido.status == 0 ? "Aguardando confirmação" : pedido.status == 1 ? "Processando pedido" : pedido.status == 2 ? "Cancelado" : pedido.status == 3 ? "A caminho" : "Entregue"}}</p>
+      <p class="mb-1">Forma de Pagamento: {{pedido.forma_pagamento == 0 ? "Cartão de crédito" : pedido.forma_pagamento == 1 ? "Cartão de débito" : pedido.forma_pagamento == 2 ? "Dinheiro" : "Pix"}}</p>
+            <small>Total: {{pedido.total | currency: 'BRL' }}</small>
     </a>   
   </div>
-<br>
-<br>
   <p *ngIf="!pedidos?.length">Você não fez nenhum pedido</p>
+<br>
+<br>

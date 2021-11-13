@@ -13,170 +13,15 @@
         <!--Grid column-->
         <div class="col-md-8 mb-4">
 
+<div class="alert alert-danger" *ngIf="errors.length > 0">
+    <h3 id="msgRetorno">Opa! Alguma coisa não deu certo:</h3>
+    <ul>
+        <li *ngFor="let error of errors">{{ error }}</li>
+    </ul>
+</div>
 
             <!--Card content-->
-            <form class="card-body">
-
-              <!--Grid row-->
-          
-              <!--Grid row-->
-
-
-              <div class="card shadow mb-3">
-                <div class="card-header py-3">
-                    <h4>Perfil</h4>
-                </div>
-
-                <div class="card-body">
-                    <div class="row">
-
-                        <div class="col">
-                            <div class="mb-3">
-                                <label class="form-label" for="nome"><strong>Nome</strong></label>
-                                <input class="form-control" formControlName="nome" type="text" id="nome" placeholder="Nome">
-                            </div>
-                        </div>
-
-                        <div class="col">
-                            <div class="mb-3">
-                                <label class="form-label" for="telefone"><strong>Telefone</strong></label>
-                                <input class="form-control" type="telefone" id="telefone" placeholder="(00) 000000-0000" name="telefone" formControlName="telefone">
-                            </div>
-                        </div>
-
-                    </div>
-
-
-                </div>
-            </div>
-
-              <div class="card shadow mb-3">
-                <div class="card-header py-3">
-                  <h4>Endereço</h4>
-                </div>
-                <div class="card-body">
-                  <div class="row">
-                    <div class="col">
-                      <div class="mb-3">
-                        <label class="form-label"><strong>CEP</strong></label>
-                        <input class="form-control" id="cep" mask="00000-000" type="text" placeholder="CEP" formControlName="cep"/>
-                      </div>
-                    </div>
-  
-                    <div class="col">
-                      <div class="mb-3">
-                        <label class="form-label"><strong>Complemento</strong></label>
-                        <input class="form-control" type="text" placeholder="Opcional" formControlName="complemento">
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col">
-                      <div class="mb-3">
-                        <label class="form-label" for="rua"><strong>Rua</strong></label>
-                        <input class="form-control" formControlName="rua" type="text" id="rua" placeholder="Rua">
-                      </div>
-                    </div>
-                    <div class="col">
-                      <div class="mb-3">
-                        <label class="form-label" for="numero"><strong>Número</strong></label>
-                        <input class="form-control" type="number" id="numero" placeholder="123" name="numero" formControlName="numero">
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col">
-                      <div class="mb-3">
-                        <label class="form-label"><strong>Bairro</strong></label>
-                        <input class="form-control" type="text" placeholder="Bairro" formControlName="bairro">
-                      </div>
-                    </div>
-                    <div class="col">
-                      <div class="mb-3">
-                        <label class="form-label"><strong>Cidade</strong></label>
-                        <input class="form-control" type="text" placeholder="Cidade" formControlName="cidade">
-                      </div>
-                    </div>
-                  </div>
-  
-  
-  
-                  <div class="row">
-                    <div class="col">
-                      <div class="mb-3">
-                        <label class="form-label"><strong>Estado</strong></label>
-                        <select class="form-control" id="estado" formControlName="estado">
-                          <option value="">Estado</option>
-                          <option value="AC">Acre</option>
-                          <option value="AL">Alagoas</option>
-                          <option value="AP">Amapá</option>
-                          <option value="AM">Amazonas</option>
-                          <option value="BA">Bahia</option>
-                          <option value="CE">Ceará</option>
-                          <option value="DF">Distrito Federal</option>
-                          <option value="ES">Espírito Santo</option>
-                          <option value="GO">Goiás</option>
-                          <option value="MA">Maranhão</option>
-                          <option value="MT">Mato Grosso</option>
-                          <option value="MS">Mato Grosso do Sul</option>
-                          <option value="MG">Minas Gerais</option>
-                          <option value="PA">Pará</option>
-                          <option value="PB">Paraíba</option>
-                          <option value="PR">Paraná</option>
-                          <option value="PE">Pernambuco</option>
-                          <option value="PI">Piauí</option>
-                          <option value="RJ">Rio de Janeiro</option>
-                          <option value="RN">Rio Grande do Norte</option>
-                          <option value="RS">Rio Grande do Sul</option>
-                          <option value="RO">Rondônia</option>
-                          <option value="RR">Roraima</option>
-                          <option value="SC">Santa Catarina</option>
-                          <option value="SP">São Paulo</option>
-                          <option value="SE">Sergipe</option>
-                          <option value="TO">Tocantins</option>
-                        </select>
-                        <!-- <span class="text-danger" *ngIf="displayMessage.estado">
-                          <p [innerHTML]="displayMessage.estado"></p>
-                        </span> -->
-                      </div>
-                      <div class="d-block my-3">
-                        <div class="custom-control custom-radio">
-                          <input id="credito" name="paymentMethod" type="radio" class="custom-control-input" checked required>
-                          <label class="custom-control-label" for="credit">Cartão de Credito</label>
-                        </div>
-                        <div class="custom-control custom-radio">
-                          <input id="debito" name="paymentMethod" type="radio" class="custom-control-input" required>
-                          <label class="custom-control-label" for="debit">Cartão de Debito</label>
-                        </div>
-                        <div class="custom-control custom-radio">
-                          <input id="pix" name="paymentMethod" type="radio" class="custom-control-input" required>
-                          <label class="custom-control-label" for="paypal">PIX</label>
-                        </div>
-                        <div class="custom-control custom-radio">
-                          <input id="dinheiro" name="paymentMethod" type="radio" class="custom-control-input" required>
-                          <label class="custom-control-label" for="paypal">Dinheiro</label>
-                        </div>
-                      </div> 
-                    </div>
-                  </div>
-                  <hr class="mb-4">
-                  <button style="background-color: #e67e22;
-                  border-color: #e67e22;" class="btn btn-primary btn-lg btn-block" type="submit">Continuar Pedido</button>
-    
-  
-                </div>
-              </div>
-          
-
-
-
-
-
-             
-            
-  
-         
-            </form>
+            <app-perfil-editar></app-perfil-editar>
 
 
         </div>
@@ -193,40 +38,53 @@
 
           <!-- Cart -->
           <ul class="list-group mb-3 z-depth-1">
-            <li class="list-group-item d-flex justify-content-between lh-condensed">
+            <li *ngFor="let item of carrinho.itens" class="list-group-item d-flex justify-content-between lh-condensed">
               <div>
-                <h6 class="my-0">Coca-Cola</h6>
-                <small class="text-muted">Lata</small>
+                <h6 class="my-0">{{item.nomeProduto}}</h6>
               </div>
-              <span class="text-muted">R$4,50</span>
+              <span class="text-muted">{{item.valor_unitario*item.quantidade | currency:"BRL":"symbol"}}</span>
             </li>
-            <li class="list-group-item d-flex justify-content-between lh-condensed">
-              <div>
-                <h6 class="my-0">Bomba de Chocolate</h6>
-                <small class="text-muted">Pote</small>
-              </div>
-              <span class="text-muted">R$3,99</span>
-            </li>
-            <li class="list-group-item d-flex justify-content-between lh-condensed">
-              <div>
-                <h6 class="my-0">Esfirra</h6>
-                <small class="text-muted">Salgado</small>
-              </div>
-              <span class="text-muted">R$4,50</span>
-            </li>          
+        
             <li class="list-group-item d-flex justify-content-between">
               <span>Total </span>
-              <strong>R$12,99</strong>
+              <strong>{{carrinho.total | currency:"BRL":"symbol"}}</strong>
             </li>
           </ul>
+
+          <div class="d-block my-3">
+            <span class="text-muted">Escolha a Forma de Pagamento</span>
+            <div class="custom-control custom-radio">
+              <input [(ngModel)]="forma_pagamento" id="credito" value=0 name="paymentMethod" type="radio" class="custom-control-input" checked required>
+              <label class="custom-control-label" for="credit">Cartão de Crédito</label>
+            </div>
+            <div class="custom-control custom-radio">
+              <input [(ngModel)]="forma_pagamento" id="debito" value=1 name="paymentMethod" type="radio" class="custom-control-input" required>
+              <label class="custom-control-label" for="debit">Cartão de Débito</label>
+            </div>
+            <div class="custom-control custom-radio">
+              <input [(ngModel)]="forma_pagamento" id="pix" value=3 name="paymentMethod" type="radio" class="custom-control-input" required>
+              <label class="custom-control-label" for="paypal">PIX</label>
+            </div>
+            <div class="custom-control custom-radio">
+              <input [(ngModel)]="forma_pagamento" id="dinheiro" value=2  name="paymentMethod" type="radio" class="custom-control-input" required>
+              <label class="custom-control-label" for="paypal">Dinheiro</label>
+            </div>
+            {{forma_pagamento}}
+          </div> 
+
+
+          <div class="d-flex flex-row align-items-center mt-3 p-2 bg-white rounded"><button class="btn btn-warning btn-block btn-lg ml-2 pay-button" style="background-color: #e67e22;
+            border-color: #e67e22; color:white;" (click)="finalizar()" type="button">Finalizar pedido</button></div>
           <!-- Cart -->
 
         </div>
         <!--Grid column-->
 
+        
       </div>
       <!--Grid row-->
 
+      
     </div>
   </main>
   <!--Main layout-->

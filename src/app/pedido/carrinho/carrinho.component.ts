@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CarrinhoModel } from 'src/app/shared/models/carrinho-model';
 import { ItensPedido } from 'src/app/shared/models/itens-pedido';
-import { Pedido } from 'src/app/shared/models/pedido';
 import { CarrinhoUtil } from 'src/app/shared/utils/carrinho.util';
 import { environment } from 'src/environments/environment';
 
@@ -12,7 +12,7 @@ import { environment } from 'src/environments/environment';
 export class CarrinhoComponent implements OnInit {
 
   public UrlImagem: string = environment.imagensurl;
-  carrinho: Pedido;
+  carrinho: CarrinhoModel;
 
   constructor() { }
 

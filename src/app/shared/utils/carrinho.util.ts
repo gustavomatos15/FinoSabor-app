@@ -1,15 +1,15 @@
+import { CarrinhoModel } from "../models/carrinho-model";
 import { ItensPedido } from "../models/itens-pedido";
-import { Pedido } from "../models/pedido";
 
 
 const _CART = 'finosaborcarrinho';
 
 export class CarrinhoUtil {
-  public static get(): Pedido {
+  public static get(): CarrinhoModel {
     const data = localStorage.getItem(_CART);
 
     if (!data) {
-      return new Pedido();
+      return new CarrinhoModel();
     }
 
     return JSON.parse(data);
@@ -20,20 +20,20 @@ export class CarrinhoUtil {
     quantidade: number,
     id_produto: string,
 
-    nome: string,
-    preco: number,
+    nomeProduto: string,
+    valor_unitario: number,
     slug: string,
     imagem_principal: string,
   ) {
     const cart = this.get();
 
-    const item = new ItensPedido(quantidade, id_produto, nome, preco, slug, imagem_principal);
+    const item = new ItensPedido(quantidade, id_produto, nomeProduto, valor_unitario, slug, imagem_principal,0);
     cart.itens.push(item);
 
     localStorage.setItem(_CART, JSON.stringify(cart));
   }
 
-  public static update(cart: Pedido) {
+  public static update(cart: CarrinhoModel) {
     localStorage.setItem(_CART, JSON.stringify(cart));
   }
 

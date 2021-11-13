@@ -33,7 +33,6 @@ export class CabecalhoLoginComponent {
     const names = this.removePrepositions(fullName.replace(lastName, '')).split(separator);
     const firstName = names[0];
     let surnames = '';
-    console.log(lastName.replace(' ',''))
     names
         .filter((name, index) => index)
         .map(name => surnames += `${separator}${name.charAt()}${token}`);

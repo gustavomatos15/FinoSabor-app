@@ -1,9 +1,10 @@
 export interface Itens_Pedido {
-    id: string;
-    valor_unitario: number;
     quantidade: number;
-    valor_item: number;
-    nomeProduto: string;
     id_produto: string;
+    nomeProduto: string;
+    valor_unitario: number;
+    
+    id: string;
+    valor_item: number;
     id_pedido: string;
 }

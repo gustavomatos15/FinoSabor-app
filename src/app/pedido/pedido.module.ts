@@ -6,6 +6,9 @@ import { ListaComponent } from './lista/lista.component';
 import { FinalizarPedidoComponent } from './finalizar-pedido/finalizar-pedido.component';
 import { PedidoAppComponent } from './pedido.app.component';
 import { PedidoRoutingModule } from './pedido.route';
+import { PerfilEditarComponent } from '../Acesso/gerenciar/perfil-editar/perfil-editar.component';
+import { GerenciarModule } from '../Acesso/gerenciar/gerenciar.module';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -17,7 +20,12 @@ import { PedidoRoutingModule } from './pedido.route';
   ],
   imports: [
     PedidoRoutingModule,
-    CommonModule
+    CommonModule,
+    FormsModule,
+    GerenciarModule
+  ],
+  exports:[
+    GerenciarModule
   ]
 })
 export class PedidoModule { }

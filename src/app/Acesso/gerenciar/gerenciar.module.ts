@@ -15,6 +15,7 @@ import { GerenciarAppComponent } from './gerenciar.app.component';
 import { MenuComponent } from './menu/menu.component';
 import { PerfilEnderecoComponent } from './perfil-endereco/perfil-endereco.component';
 import { NgxMaskModule } from 'ngx-mask';
+import { PerfilEditarComponent } from './perfil-editar/perfil-editar.component';
 
 
 
@@ -24,7 +25,8 @@ import { NgxMaskModule } from 'ngx-mask';
     TrocarSenhaComponent,
     PerfilComponent,
     MenuComponent,
-    PerfilEnderecoComponent
+    PerfilEnderecoComponent,
+    PerfilEditarComponent
   ],
   imports: [
     CommonModule,
@@ -37,6 +39,7 @@ import { NgxMaskModule } from 'ngx-mask';
     NgBrazil,
     TextMaskModule,
     NgxMaskModule.forRoot()
-  ]
+  ],
+  exports: [PerfilEditarComponent]
 })
 export class GerenciarModule { }

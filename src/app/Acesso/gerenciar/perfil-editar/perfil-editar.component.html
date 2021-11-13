@@ -1,0 +1,204 @@
+<form id="profile-form" method="post" novalidate="novalidate" [formGroup]="usuarioForm">
+    <div class="card shadow mb-3">
+        <div class="card-header py-3">
+            <h4>Perfil</h4>
+        </div>
+
+        <div class="card-body">
+            <div class="row">
+
+                <div class="col">
+                    <div class="mb-3">
+                        <label class="form-label" for="nome"><strong>Nome</strong></label>
+                        <input class="form-control" formControlName="nome" type="text" id="nome" placeholder="Nome" [ngClass]="{'is-invalid': displayMessage.nome }">
+                        <span class="text-danger" *ngIf="displayMessage.nome">
+    <p [innerHTML]="displayMessage.nome"></p>
+  </span>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="mb-3">
+                        <label class="form-label" for="telefone"><strong>Telefone</strong></label>
+                        <input class="form-control" type="telefone" id="telefone" placeholder="(00) 000000-0000" name="telefone" formControlName="telefone" [ngClass]="{'is-invalid': displayMessage.telefone }">
+                        <span class="text-danger" *ngIf="displayMessage.telefone">
+    <p [innerHTML]="displayMessage.telefone"></p>
+  </span>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <div class="mb-3">
+                        <label class="form-label" for="first_name"><strong>CPF</strong></label>
+                        <input class="form-control" type="text" id="first_name" placeholder="CPF" formControlName="cpf" [ngClass]="{'is-invalid': displayMessage.cpf }">
+                        <span class="text-danger" *ngIf="displayMessage.cpf">
+    <p [innerHTML]="displayMessage.cpf"></p>
+  </span>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="mb-3">
+                        <label class="form-label" for="last_name"><strong>Data de Nascimento</strong></label>
+                        <input class="form-control" type="date" id="last_name" placeholder="data" formControlName="data_nascimento" [ngClass]="{'is-invalid': displayMessage.data_nascimento }">
+                        <span class="text-danger" *ngIf="displayMessage.data_nascimento">
+    <p [innerHTML]="displayMessage.data_nascimento"></p>
+  </span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="card shadow mb-3">
+        <div class="card-header py-3">
+            <h4>Endereço</h4>
+        </div>
+
+        <div class="card-body">
+            <div class="row">
+
+                <div class="col">
+                    <div class="mb-3">
+                        <label class="form-label"><strong>CEP</strong></label>
+                        <input class="form-control" id="cep" mask="00000-000" type="text" placeholder="CEP" (blur)="buscarCep($event.target.value)" formControlName="cep" cep [ngClass]="{ 'is-invalid': displayMessage.cep }" />
+
+                        <span class="text-danger" *ngIf="displayMessage.cep">
+    <p [innerHTML]="displayMessage.cep"></p>
+  </span>
+                    </div>
+                </div>
+
+
+                <div class="col">
+                    <div class="mb-3">
+                        <label class="form-label"><strong>Complemento</strong></label>
+                        <input class="form-control" type="text" placeholder="Opcional" formControlName="complemento" [ngClass]="{'is-invalid': displayMessage.complemento }">
+                        <span class="text-danger" *ngIf="displayMessage.complemento">
+    <p [innerHTML]="displayMessage.complemento"></p>
+  </span>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="col">
+                    <div class="mb-3">
+                        <label class="form-label" for="rua"><strong>Rua</strong></label>
+                        <input class="form-control" formControlName="rua" type="text" id="rua" placeholder="Rua" [ngClass]="{'is-invalid': displayMessage.rua }">
+                        <span class="text-danger" *ngIf="displayMessage.rua">
+    <p [innerHTML]="displayMessage.rua"></p>
+  </span>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="mb-3">
+                        <label class="form-label" for="numero"><strong>Número</strong></label>
+                        <input class="form-control" type="number" id="numero" placeholder="123" name="numero" formControlName="numero" [ngClass]="{'is-invalid': displayMessage.numero }">
+                        <span class="text-danger" *ngIf="displayMessage.numero">
+    <p [innerHTML]="displayMessage.numero"></p>
+  </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+
+                <div class="col">
+                    <div class="mb-3">
+                        <label class="form-label"><strong>Bairro</strong></label>
+                        <input class="form-control" type="text" placeholder="Bairro" formControlName="bairro" [ngClass]="{'is-invalid': displayMessage.bairro }">
+                        <span class="text-danger" *ngIf="displayMessage.bairro">
+    <p [innerHTML]="displayMessage.bairro"></p>
+  </span>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="mb-3">
+                        <label class="form-label"><strong>Cidade</strong></label>
+                        <input class="form-control" type="text" placeholder="Cidade" formControlName="cidade" [ngClass]="{'is-invalid': displayMessage.cidade }">
+                        <span class="text-danger" *ngIf="displayMessage.cidade">
+    <p [innerHTML]="displayMessage.cidade"></p>
+  </span>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+            <div class="row">
+
+                <div class="col">
+                    <div class="mb-3">
+                        <label class="form-label"><strong>Estado</strong></label>
+                        <select class="form-control" id="estado" formControlName="estado" [ngClass]="{ 'is-invalid': displayMessage.estado }">
+    <option value="">Estado</option>
+    <option value="AC">Acre</option>
+    <option value="AL">Alagoas</option>
+    <option value="AP">Amapá</option>
+    <option value="AM">Amazonas</option>
+    <option value="BA">Bahia</option>
+    <option value="CE">Ceará</option>
+    <option value="DF">Distrito Federal</option>
+    <option value="ES">Espírito Santo</option>
+    <option value="GO">Goiás</option>
+    <option value="MA">Maranhão</option>
+    <option value="MT">Mato Grosso</option>
+    <option value="MS">Mato Grosso do Sul</option>
+    <option value="MG">Minas Gerais</option>
+    <option value="PA">Pará</option>
+    <option value="PB">Paraíba</option>
+    <option value="PR">Paraná</option>
+    <option value="PE">Pernambuco</option>
+    <option value="PI">Piauí</option>
+    <option value="RJ">Rio de Janeiro</option>
+    <option value="RN">Rio Grande do Norte</option>
+    <option value="RS">Rio Grande do Sul</option>
+    <option value="RO">Rondônia</option>
+    <option value="RR">Roraima</option>
+    <option value="SC">Santa Catarina</option>
+    <option value="SP">São Paulo</option>
+    <option value="SE">Sergipe</option>
+    <option value="TO">Tocantins</option>
+  </select>
+                        <span class="text-danger" *ngIf="displayMessage.estado">
+    <p [innerHTML]="displayMessage.estado"></p>
+  </span>
+
+                    </div>
+                </div>
+
+            </div>
+
+
+            <button type="submit" class="btn btn-primary" style="background-color: #e67e22;
+border-color: #e67e22;" [disabled]="!usuarioForm.valid" (click)="EditarPerfil()">Atualizar</button>
+
+        </div>
+    </div>
+
+
+
+
+
+
+</form>
+
+
+<div class="alert alert-danger" *ngIf="errors.length > 0">
+    <h3 id="msgRetorno">Opa! Alguma coisa não deu certo:</h3>
+    <ul>
+        <li *ngFor="let error of errors">{{ error }}</li>
+    </ul>
+</div>

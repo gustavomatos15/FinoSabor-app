@@ -20,4 +20,12 @@ export class DetalhesComponent {
 
     if (this.pedido == null) this.router.navigate(['/pedidos/lista']);
   }
+
+  ToDateTime(datetime) {
+
+    const date = datetime.split('T');
+
+    return date[0].replaceAll('-', '/') + ' - ' + date[1].substring(0, 5);
+
+  }
 }
