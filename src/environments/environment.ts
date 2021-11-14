@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'https://api.finosabor.me/api/',
-  imagensurl: 'https://api.finosabor.me/imagens/'
+  apiUrl: 'https://localhost/api/',
+  imagensurl: 'https://localhost/imagens/'
 };
 
 /*

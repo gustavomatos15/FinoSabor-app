@@ -27,10 +27,10 @@
     </div>
     <div class="progress-track">
         <ul id="progressbar">
-            <li class="step0 active" id="step1">Aguardando confirmação</li>
-            <li class="step0 active text-center" id="step2">Processando pedido</li>
-            <li class="step0 active text-right" id="step3">A caminho</li>
-            <li class="step0 text-right" id="step4">Entregue</li>
+            <li class="step0" [ngClass]="{'active': pedido.status>=0}" id="step1">Aguardando confirmação</li>
+            <li class="step0 text-center" [ngClass]="{'active': pedido.status>=1}" id="step2">Processando pedido</li>
+            <li class="step0 text-right" [ngClass]="{'active': pedido.status>=2}" id="step3">A caminho</li>
+            <li class="step0 text-right" [ngClass]="{'active': pedido.status>=3}" id="step4">Entregue</li>
         </ul>
     </div>
     <div class="footer">
