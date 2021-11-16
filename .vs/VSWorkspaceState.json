@@ -3,9 +3,11 @@
     "",
     "\\src",
     "\\src\\app",
-    "\\src\\app\\Acesso",
     "\\src\\app\\Acesso\\gerenciar",
-    "\\src\\app\\Acesso\\gerenciar\\perfil"
+    "\\src\\app\\Acesso\\gerenciar\\perfil",
+    "\\src\\app\\navegacao",
+    "\\src\\app\\navegacao\\cabecalho-login"
   ],
+  "SelectedNode": "\\src\\app\\navegacao\\cabecalho-login\\cabecalho-login.component.html",
   "PreviewInSolutionExplorer": false
 }

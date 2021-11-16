@@ -20,7 +20,7 @@
                 <div class="col">
                     <div class="mb-3">
                         <label class="form-label" for="telefone"><strong>Telefone</strong></label>
-                        <input class="form-control" type="telefone" id="telefone" placeholder="(00) 000000-0000" name="telefone" formControlName="telefone" [ngClass]="{'is-invalid': displayMessage.telefone }">
+                        <input class="form-control" type="telefone" [textMask]="{mask: MASKS.telefone.textMaskFunction}" id="telefone" placeholder="(00) 000000-0000" name="telefone" formControlName="telefone" [ngClass]="{'is-invalid': displayMessage.telefone }">
                         <span class="text-danger" *ngIf="displayMessage.telefone">
     <p [innerHTML]="displayMessage.telefone"></p>
   </span>
@@ -33,7 +33,7 @@
                 <div class="col">
                     <div class="mb-3">
                         <label class="form-label" for="first_name"><strong>CPF</strong></label>
-                        <input class="form-control" type="text" id="first_name" placeholder="CPF" formControlName="cpf" [ngClass]="{'is-invalid': displayMessage.cpf }">
+                        <input class="form-control" type="text" [textMask]="{mask: MASKS.cpf.textMask}" id="first_name" placeholder="CPF" formControlName="cpf" [ngClass]="{'is-invalid': displayMessage.cpf }">
                         <span class="text-danger" *ngIf="displayMessage.cpf">
     <p [innerHTML]="displayMessage.cpf"></p>
   </span>
@@ -64,7 +64,7 @@
                 <div class="col">
                     <div class="mb-3">
                         <label class="form-label"><strong>CEP</strong></label>
-                        <input class="form-control" id="cep" mask="00000-000" type="text" placeholder="CEP" (blur)="buscarCep($event.target.value)" formControlName="cep" cep [ngClass]="{ 'is-invalid': displayMessage.cep }" />
+                        <input class="form-control" id="cep" [textMask]="{mask: MASKS.cep.textMask}" mask="00000-000" type="text" placeholder="CEP" (blur)="buscarCep($event.target.value)" formControlName="cep" cep [ngClass]="{ 'is-invalid': displayMessage.cep }" />
 
                         <span class="text-danger" *ngIf="displayMessage.cep">
     <p [innerHTML]="displayMessage.cep"></p>

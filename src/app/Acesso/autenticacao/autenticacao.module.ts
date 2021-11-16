@@ -10,6 +10,8 @@ import { CustomFormsModule } from 'ngx-custom-validators'
 import { RegistrarComponent } from './registrar/registrar.component';
 import { NavegacaoModule } from 'src/app/navegacao/navegacao.module';
 import { AutenticaoService } from './services/autenticacao.service';
+import { NgBrazil } from 'ng-brazil';
+import { TextMaskModule } from 'angular2-text-mask';
 
 
 

@@ -37,8 +37,7 @@ import { PerfilEditarComponent } from './perfil-editar/perfil-editar.component';
     HttpClientModule,
     CustomFormsModule,
     NgBrazil,
-    TextMaskModule,
-    NgxMaskModule.forRoot()
+    TextMaskModule
   ],
   exports: [PerfilEditarComponent]
 })

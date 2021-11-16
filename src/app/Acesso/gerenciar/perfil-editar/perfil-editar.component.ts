@@ -11,6 +11,7 @@ import { Usuario } from '../models/Usuario';
 import { StringUtils } from 'src/app/shared/utils/string-utils';
 import { applySourceSpanToExpressionIfNeeded } from '@angular/compiler/src/output/output_ast';
 import { cepconsulta } from '../models/CepConsulta';
+import { MASKS, NgBrazilValidators } from 'ng-brazil';
 
 @Component({
   selector: 'app-perfil-editar',
@@ -25,7 +26,7 @@ export class PerfilEditarComponent extends FormBaseComponent implements OnInit, 
   usuarioForm: FormGroup;
   usuario: Usuario;
 
-  MASKS = utilsBr.MASKS;
+  public MASKS = MASKS;
 
   constructor(private activatedRouteoute: ActivatedRoute,
     private fb: FormBuilder,
@@ -37,31 +38,30 @@ export class PerfilEditarComponent extends FormBaseComponent implements OnInit, 
 
     this.validationMessages = {
       nome: {
-        required: 'Informe a senha',
-        rangeLength: 'A senha deve possuir entre 6 e 100 caracteres'
+        required: 'Informe o nome',
+        rangeLength: 'O nome deve possuir entre 4 e 100 caracteres'
       },
       telefone: {
-        required: 'Informe a senha',
-        rangeLength: 'A senha deve possuir entre 6 e 100 caracteres'
+        required: 'Informe o seu telefone',
+        rangeLength: 'O telfone deve possuir entre 10 e 12 caracteres'
       },
       cpf: {
-        required: 'Informe a senha novamente',
-        rangeLength: 'A senha deve possuir entre 6 e 100 caracteres',
-        equalTo: 'As senhas não conferem'
+        required: 'Informe o seu CPF',
+        rangeLength: 'O CPF deve possuir 11 caracteres',
+        cpf: 'CPF em formato inválido'
       },
       data_nascimento: {
-        required: 'Informe a senha',
+        required: 'Informe a data de nascimento',
         rangeLength: 'A senha deve possuir entre 6 e 100 caracteres'
       },
       rua: {
-        required: 'Informe o rua',
+        required: 'Informe a rua',
       },
       numero: {
         required: 'Informe o Número',
       },
       complemento: {
-        required: 'Informe a senha',
-        rangeLength: 'A senha deve possuir entre 6 e 100 caracteres'
+        rangeLength: 'O complemento deve possuir entre 3 e 40 caracteres'
       },
       bairro: {
         required: 'Informe o Bairro',
@@ -80,6 +80,7 @@ export class PerfilEditarComponent extends FormBaseComponent implements OnInit, 
 
     };
 
+
     super.configurarMensagensValidacaoBase(this.validationMessages);
 
 
@@ -90,19 +91,18 @@ export class PerfilEditarComponent extends FormBaseComponent implements OnInit, 
   ngOnInit() {
 
     this.usuarioForm = this.fb.group({
-      nome: ['', [Validators.required]],
-      telefone: ['', [Validators.required]],
-      cpf: ['', [Validators.required]],
+      nome: ['', [Validators.required, CustomValidators.rangeLength([4, 100])]],
+      telefone: ['', [Validators.required, NgBrazilValidators.telefone]],
+      cpf: ['', [Validators.required, NgBrazilValidators.cpf]],
       data_nascimento: ['', [Validators.required]],
       rua: ['', [Validators.required]],
       numero: ['', [Validators.required]],
       complemento: ['', ],
-      cep: ['', [Validators.required, CustomValidators.rangeLength([8, 8])]],
+      cep: ['', [Validators.required, NgBrazilValidators.cep]],
       bairro: ['', [Validators.required]],
       cidade: ['', [Validators.required]],
       estado: ['', [Validators.required]],
     });
-
     this.preencherForm();
 
   }
@@ -185,8 +185,6 @@ removedateTime(datetime)
 
   processarSucesso(response: any) {
     this.errors = [];
-
-    console.log("sucesso");
     this.toastr.success('Alerações feitas com sucesso', 'Sucesso');
 
   }
